@@ -9908,7 +9908,7 @@ function RoClothes(Player)
 				"Bunny Bands",
 				"Bunny Suit",
 				"Collar w/ Bow",
-				"Fisnet Stockings",
+				"Fishnet Stockings",
 				"Shoe 1",
 				"Roblox Pants",
 				"Sock 1",
