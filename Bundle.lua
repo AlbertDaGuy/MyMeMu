@@ -9575,8 +9575,8 @@ function RoClothes(Player)
 				125982056484221
 			},
 			["Clothes"] = {
-				["Shirt"] = 96385751872665,
-				["Pants"] = 103884261106299,
+				["Shirt"] = 113954861499460,
+				["Pants"] = 85109784547620,
 			},
 			["Clothing"] = {
 				"Roblox Breasts Clothing",
