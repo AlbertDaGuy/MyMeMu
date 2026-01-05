@@ -9885,6 +9885,58 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(102, 102, 102),
 		},
+		["Iris (Rusmynth)"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(203, 143, 105),
+				["LeftArmColor3"] = Color3.fromRGB(203, 143, 105),
+				["RightArmColor3"] = Color3.fromRGB(203, 143, 105),
+				["LeftLegColor3"] = Color3.fromRGB(203, 143, 105),
+				["RightLegColor3"] = Color3.fromRGB(203, 143, 105),
+				["TorsoColor3"] = Color3.fromRGB(203, 143, 105),
+			},
+			["Accessory"] = {
+				16630147,
+				14815761,
+				4143016822,
+				4196166312
+			},
+			["Clothes"] = {
+				Pants = "18381367833"
+			},
+			["Clothing"] = {
+				"Bunny Aspects",
+				"Bunny Bands",
+				"Bunny Suit",
+				"Collar w/ Bow",
+				"Fisnet Stockings",
+				"Shoe 1",
+				"Roblox Pants",
+				"Sock 1",
+			},
+			["Preset"] = {
+				Tone = "Dark",
+				Face = false,
+				AccessorySizeLock = true,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				RealtimeBodyTransparency = false,
+				PositionPhysicsMultiply = 1,
+				RotationPhysicsMultiply = 4,
+				BreastsScale = 1,
+				ButtsScale = 1,
+				LegsScale = 1,
+				BreastsType = 1,
+				TorsoType = 1,
+				ArmType = 1,
+				LegsType = 1,
+				ButtType = 1,
+				HardcoreHP = false,
+				TopHP = 25,
+				BottomHP = 50,
+				DamageSFX = 5,
+				Volume = 1.5,
+			}
+		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
 			["Clothing"] = {
