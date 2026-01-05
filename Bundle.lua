@@ -9823,6 +9823,7 @@ function RoClothes(Player)
 			["Recolor"] = {
 				["Skirt 1"] = {
 					["Primary"] = Color3.fromRGB(232, 196, 208)
+			},
 			}
 		},
 		["Celestial"] = {
