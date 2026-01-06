@@ -9988,44 +9988,6 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Dummy (Male)"] = {
-			["Body Color"] = {
-				["HeadColor3"] = Color3.fromRGB(162, 162, 165),
-				["LeftArmColor3"] = Color3.fromRGB(162, 162, 165),
-				["RightArmColor3"] = Color3.fromRGB(162, 162, 165),
-				["LeftLegColor3"] = Color3.fromRGB(162, 162, 165),
-				["RightLegColor3"] = Color3.fromRGB(162, 162, 165),
-				["TorsoColor3"] = Color3.fromRGB(162, 162, 165),
-			},
-			["Clothing"] = {
-				"BBC Cock",
-				"Remove Breasts"
-			},
-			["Preset"] = {
-				Tone = "Use NippleColor",
-				Face = false,
-				AccessorySizeLock = true,
-				BodyPartPhysics = true,
-				PhysicsObeyGravity = true,
-				RealtimeBodyTransparency = false,
-				PositionPhysicsMultiply = 1,
-				RotationPhysicsMultiply = 4,
-				BreastsScale = 0,
-				ButtsScale = 0,
-				LegsScale = 1,
-				BreastsType = 1,
-				TorsoType = 5,
-				ArmType = 3,
-				LegsType = 4,
-				ButtType = 2,
-				HardcoreHP = false,
-				TopHP = 25,
-				BottomHP = 50,
-				DamageSFX = 0,
-				Volume = 0,
-			},
-			["NippleColor"] = Color3.fromRGB(99, 99, 99),
-		},
 		["Dummy (Female)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(162, 162, 165),
