@@ -10077,6 +10077,54 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(100, 200, 150),
 		},
+		["Bludeja"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(234, 184, 146),
+				["LeftArmColor3"] = Color3.fromRGB(234, 184, 146),
+				["RightArmColor3"] = Color3.fromRGB(234, 184, 146),
+				["LeftLegColor3"] = Color3.fromRGB(234, 184, 146),
+				["RightLegColor3"] = Color3.fromRGB(234, 184, 146),
+				["TorsoColor3"] = Color3.fromRGB(234, 184, 146),
+			},
+			["Accessory"] = {
+				76559120450687,
+				94255512142526,
+				18700576229,
+				106690045,
+			},
+			["Clothes"] = {
+				["Shirt"] = 5231239420,
+				["Pants"] = 5891675938,
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt Method2",
+				"Roblox Pants",
+				"Pussy Closed"
+			},
+			["Preset"] = {
+				Tone = "Base",
+				Face = false,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				PositionPhysicsMultiply = 1.4,
+				RotationPhysicsMultiply = 4,
+				BreastsScale = 1.06,
+				ButtsScale = 1.06,
+				LegsScale = 1,
+				BreastsType = 1,
+				TorsoType = 3,
+				ArmType = 2,
+				LegsType = 3,
+				ButtType = 2,
+				HardcoreHP = false,
+				TopHP = 30,
+				BottomHP = 50,
+				DamageSFX = 0.1,
+				Volume = 100.2,
+			}
+		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
 			["Clothing"] = {
