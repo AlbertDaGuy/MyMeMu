@@ -11810,13 +11810,13 @@ function RoClothes(Player)
 				17258479887,
 				12114479355,
 				12114394404,
-				12114386668
+				12114386668,
 			},
 			["Clothes"] = {
 				["Shirt"] = 4636420388,
 				["Pants"] = 5252181419,
 			},
-			["TClothes"] = { 
+			["TClothes"] = {
 				["Shirt"] = 0,
 				["Pants"] = 0,
 			},
@@ -11862,13 +11862,13 @@ function RoClothes(Player)
 			["Accessory"] = {
 				116040618711870, 
 				17274841581,
-				94045599514489
+				94045599514489,
 			},
 			["Clothes"] = {
 				["Shirt"] = 103775002347445,
 				["Pants"] = 103882690407604,
 			},
-			["TClothes"] = { 
+			["TClothes"] = {
 				["Shirt"] = 0,
 				["Pants"] = 0,
 			},
@@ -11914,13 +11914,13 @@ function RoClothes(Player)
 			["Accessory"] = {
 				116040618711870, 
 				17274841581,
-				94045599514489
+				94045599514489,
 			},
 			["Clothes"] = {
 				["Shirt"] = 103775002347445,
 				["Pants"] = 117391128200989,
 			},
-			["TClothes"] = { 
+			["TClothes"] = {
 				["Shirt"] = 0,
 				["Pants"] = 0,
 			},
@@ -12009,7 +12009,7 @@ function RoClothes(Player)
                 BottomHP = 25,
                 DamageSFX = 5,
                 Volume = 2.5,
-		    },
+		    }
 	    },
 		["Orky cutesy"] = {
 			["Body Color"] = {
