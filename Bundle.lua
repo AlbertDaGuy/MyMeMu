@@ -12386,7 +12386,6 @@ function RoClothes(Player)
 				"Roblox Breasts Clothing",
 				"Roblox Shirt",
 				"Roblox Pants",
-				"Roblox Butt Shirt Method2",
 				"Pussy Closed"
 			},
 			["Preset"] = {
@@ -12620,7 +12619,7 @@ function RoClothes(Player)
 				"Pussy Closed"
 			},
 			["Preset"] = {
-				Tone = "Dark",
+				Tone = "Use NippleColor",
 				Face = false,
 				AccessorySizeLock = true,
 				BodyPartPhysics = true,
@@ -12641,7 +12640,8 @@ function RoClothes(Player)
 				BottomHP = 25,
 				DamageSFX = 0.2,
 				Volume = 100.2,
-			}
+			},
+			["NippleColor"] = Color3.fromRGB(132, 9, 2),
 		},
 		["Derpina"] = {
 			["Body Color"] = {
@@ -12732,11 +12732,10 @@ function RoClothes(Player)
 				"Roblox Breasts Clothing",
 				"Roblox Shirt",
 				"Roblox Pants",
-				"Roblox Butt Shirt Method2",
 				"Pussy Closed"
 			},
 			["Preset"] = {
-				Tone = "Dark",
+				Tone = "Use NippleColor",
 				Face = false,
 				AccessorySizeLock = true,
 				BodyPartPhysics = true,
@@ -12757,7 +12756,8 @@ function RoClothes(Player)
 				BottomHP = 25,
 				DamageSFX = 0.2,
 				Volume = 100.2,
-			}
+			},
+			["NippleColor"] = Color3.fromRGB(55, 60, 69),
 		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
