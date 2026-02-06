@@ -10091,7 +10091,7 @@ function RoClothes(Player)
 				94255512142526,
 				18700576229,
 				106690045,
-				97326212689101
+				97326212689101,
 			},
 			["Clothes"] = {
 				["Shirt"] = 5231239420,
@@ -11812,7 +11812,7 @@ function RoClothes(Player)
 				12114479355,
 				12114394404,
 				12114386668,
-				97326212689101
+				97326212689101,
 			},
 			["Clothes"] = {
 				["Shirt"] = 4636420388,
@@ -15871,105 +15871,6 @@ function RoClothes(Player)
             },
 			["NippleColor"] = Color3.fromRGB(60, 223, 255),
 		},
-		["Teto Utau"] = {
-			["Body Color"] = {
-				["HeadColor3"] = Color3.fromRGB(238, 166, 118),
-				["LeftArmColor3"] = Color3.fromRGB(238, 166, 118),
-				["RightArmColor3"] = Color3.fromRGB(238, 166, 118),
-				["LeftLegColor3"] = Color3.fromRGB(238, 166, 118),
-				["RightLegColor3"] = Color3.fromRGB(238, 166, 118),
-				["TorsoColor3"] = Color3.fromRGB(238, 166, 118),
-			},
-			["Accessory"] = {
-				131711352584227,
-				105122878711966,
-				128244975915821
-			},
-			["Clothes"] = {
-				["Shirt"] = 83831082491351,
-				["Pants"] = 74782885442582
-			},
-			["TClothes"] = {
-				["Shirt"] = 83831082491351,
-				["Pants"] = 104254524453774,
-			},
-			["Clothing"] = {
-				"Roblox Breasts Clothing",
-				"Roblox Shirt",
-				"Roblox Pants",
-				"Roblox Butt Shirt",
-			},
-			["Preset"] = {
-				BodyPartPhysics = true,
-				PhysicsObeyGravity = true,
-				PositionPhysicsMultiply = 1,
-				RotationPhysicsMultiply = 5,
-				BreastsScale = 1.1,
-				ButtsScale = 1.1,
-				LegsScale = 1.1,
-				BreastsType = 1,
-				TorsoType = 8,
-				ArmType = 2,
-				LegsType = 2,
-				ButtType = 3,
-				HardcoreHP = true,
-				TopHP = 50,
-				BottomHP = 50,
-				DamageSFX = 15,
-				Volume = 14,
-				Tone = "Use NippleColor",
-			},
-			["NippleColor"] = Color3.fromRGB(184,118,84),
-		},
-		["Teto SynthV"] = {
-			["Body Color"] = {
-				["HeadColor3"] = Color3.fromRGB(238, 166, 118),
-				["LeftArmColor3"] = Color3.fromRGB(238, 166, 118),
-				["RightArmColor3"] = Color3.fromRGB(238, 166, 118),
-				["LeftLegColor3"] = Color3.fromRGB(238, 166, 118),
-				["RightLegColor3"] = Color3.fromRGB(238, 166, 118),
-				["TorsoColor3"] = Color3.fromRGB(238, 166, 118),
-			},
-			["Accessory"] = {
-				138362879888172,
-				105122878711966
-			},
-			["Clothes"] = {
-				["Shirt"] = 13763694098,
-				["Pants"] = 13763696559
-			},
-			["TClothes"] = {
-				["Shirt"] = 13763694098,
-				["Pants"] = 88661389966414
-	  	  },
-			["Clothing"] = {
-				"Roblox Breasts Clothing",
-				"Roblox Shirt",
-				"Roblox Pants",
-				"Roblox Butt Shirt",
-			},
-			["Preset"] = {
-				BodyPartPhysics = true,
-				PhysicsObeyGravity = true,
-				PositionPhysicsMultiply = 1,
-				RotationPhysicsMultiply = 5,
-				BreastsScale = 1.1,
-				ButtsScale = 1.1,
-				LegsScale = 1.1,
-				BreastsType = 1,
-				TorsoType = 8,
-				ArmType = 2,
-				LegsType = 2,
-				ButtType = 3,
-				HardcoreHP = true,
-				TopHP = 50,
-				BottomHP = 50,
-				DamageSFX = 15,
-				Volume = 14,
-				Tone = "Use NippleColor",
-			},
-			["NippleColor"] = Color3.fromRGB(184,118,84),
-		},
 		["Lucy"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
@@ -16147,55 +16048,6 @@ function RoClothes(Player)
 				},
 			},
 			["NippleColor"] = Color3.fromRGB(255, 216, 216),
-		},
-		["sk8r girl (v2)"] = {
-			["Body Color"] = {
-				["HeadColor3"] = Color3.fromRGB(230, 230, 230),
-				["LeftArmColor3"] = Color3.fromRGB(230, 230, 230),
-				["RightArmColor3"] = Color3.fromRGB(230, 230, 230),
-				["LeftLegColor3"] = Color3.fromRGB(230, 230, 230),
-				["RightLegColor3"] = Color3.fromRGB(230, 230, 230),
-				["TorsoColor3"] = Color3.fromRGB(230, 230, 230),
-			},
-			["Accessory"] = {
-				17112791973,
-				23155410,
-				4772212828
-			},
-			["Clothes"] = {
-				["Shirt"] = 17696607830,
-				["Pants"] = 17696081422
-			},
-			["TClothes"] = {
-				["Shirt"] = 17696607830
-			},
-			["Clothing"] = {
-				"Roblox Butt Shirt",
-				"Roblox Breasts Clothing Type 3",
-				"Roblox Shirt",
-				"Roblox Pants"
-			},
-			["Preset"] = {
-				BodyPartPhysics = true,
-				PhysicsObeyGravity = true,
-				PositionPhysicsMultiply = 1,
-				RotationPhysicsMultiply = 5,
-				BreastsScale = 1,
-				ButtsScale = 1.1,
-				LegsScale = 1.1,
-				BreastsType = 3,
-				TorsoType = 7,
-				ArmType = 2,
-				LegsType = 1,
-				ButtType = 1,
-				HardcoreHP = true,
-				TopHP = 50,
-				BottomHP = 50,
-				DamageSFX = 15,
-				Volume = 20,
-				Tone = "UseNippleColor"
-			},
-			["NippleColor"] = Color3.fromRGB(125, 125, 125),
 		},
 		["chara"] = {
 			["Body Color"] = {
