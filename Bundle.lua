@@ -15757,6 +15757,104 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
+        ["Bludeja (Alt)"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(234, 184, 146),
+				["LeftArmColor3"] = Color3.fromRGB(234, 184, 146),
+				["RightArmColor3"] = Color3.fromRGB(234, 184, 146),
+				["LeftLegColor3"] = Color3.fromRGB(234, 184, 146),
+				["RightLegColor3"] = Color3.fromRGB(234, 184, 146),
+				["TorsoColor3"] = Color3.fromRGB(234, 184, 146),
+			},
+			["Accessory"] = {
+				76559120450687,
+				94255512142526,
+				18700576229,
+				106690045,
+			},
+			["Clothes"] = {
+				["Shirt"] = 5231239420,
+				["Pants"] = 5891675938,
+			},
+			["Clothing"] = {
+				"Roblox Butt Shirt Method2",
+				"Roblox Pants",
+				"Pussy Closed",
+				"Croptop w/o Neck",
+				"Maid Arm Band",
+				"Maid Leg Band",
+				"Glove 2",
+				"Jacket",
+				"Birdly Sleeves",
+				"Kitty Band",
+				"Panty",
+				"Scarf",
+				"Shoe 2",
+				"Sock 2",
+			},
+			["Preset"] = {
+				Tone = "Base",
+				Face = false,
+				AccessorySizeLock = true,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				RealtimeBodyTransparency = false,
+				PositionPhysicsMultiply = 0.6,
+				RotationPhysicsMultiply = 1,
+				BreastsScale = 1,
+				ButtsScale = 1.04,
+				LegsScale = 1,
+				BreastsType = 1,
+				TorsoType = 1,
+				ArmType = 1,
+				LegsType = 1,
+				ButtType = 2,
+				HardcoreHP = false,
+				TopHP = 30,
+				BottomHP = 50,
+				DamageSFX = 0.1,
+				Volume = 100.2,
+			},
+			["Recolor"] = {
+				["Sock 2"] = {
+					["Primary"] = Color3.fromRGB(0, 0, 0),
+					["Secondary"] = Color3.fromRGB(37, 37, 37),
+				},
+				["Glove 2"] = {
+					["Primary"] = Color3.fromRGB(0, 0, 0),
+				},
+				["Birdly Sleeves"] = {
+					["Primary"] = Color3.fromRGB(0, 0, 0),
+					["Secondary"] = Color3.fromRGB(26, 178, 255),
+				},
+				["Kitty Band"] = {
+					["Primary"] = Color3.fromRGB(0, 0, 0),
+					["Secondary"] = Color3.fromRGB(26, 178, 255),
+				},
+				["Maid Arm Band"] = {
+					["Primary"] = Color3.fromRGB(0, 0, 0),
+					["Secondary"] = Color3.fromRGB(26, 178, 255),
+				},
+				["Maid Leg Band"] = {
+					["Secondary"] = Color3.fromRGB(0, 0, 0),
+				},
+				["Panty"] = {
+					["Primary"] = Color3.fromRGB(37, 37, 37),
+				},
+				["Scarf"] = {
+					["Primary"] = Color3.fromRGB(55, 55, 55),
+				},
+				["Shoe 2"] = {
+					["Primary"] = Color3.fromRGB(40, 40, 40),
+				},
+				["Jacket"] = {
+					["Primary"] = Color3.fromRGB(26, 178, 255),
+				},
+				["Croptop w/o Neck"] = {
+					["Primary"] = Color3.fromRGB(26, 178, 255),
+				}
+			},
+		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
 			["Clothing"] = {
