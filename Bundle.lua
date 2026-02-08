@@ -2835,6 +2835,24 @@ function RoClothes(Player)
 					[1] = "Torso",
 				},
 			},
+			["Shimapan"] = {
+				["Instance"] = "Mesh",
+				["Name"] = "Shimapan",
+				["MeshId"] = "rbxasset://RClothesContent/11377850676.mesh",
+				["Size"] = Vector3.new(1.783, 1.12, 1.484),
+				["CFrame"] = CFrame.new(-1.90734863e-06, -0.912999868, 0.160000801, -1, 5.42022508e-06, -1.01899627e-06, 5.42022826e-06, 1, -2.88098499e-06, 1.01898058e-06, -2.88099e-06, -1),
+				["Transparency"] = 0,
+				["TextureId"] = "rbxasset://RClothesContent/shimapan.png",
+				["Material"] = Enum.Material.SmoothPlastic,
+				["Color"] = {
+					["Tone"] = "Base",
+					["Color"] = Color3.fromRGB(248, 248, 248)
+				},
+				["Recolor"] = "Primary",
+				["Parent"] = {
+					[1] = "Torso",
+				},
+			},
 			["Apron 1"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Apron",
@@ -3321,6 +3339,23 @@ function RoClothes(Player)
 				},
 				["Size"] = Vector3.new(1.8829039335250854, 1.1392192840576172, 1.8722314834594727),
 				["TextureId"] = "rbxasset://RClothesContent/12038926049.png",
+				["Transparency"] = 0
+			},
+			["Miku Bra"] = {
+				["CFrame"] = CFrame.new(-0.00286865234, 0.475341082, -0.362598419, -6.51926314e-07, 1.17439922e-05, 1.00000191, -2.4008159e-06, 0.999996185, -8.13043971e-06, -1, -4.80170684e-07, -1.30372001e-07),
+				["Color"] = {
+					["Color"] = Color3.fromRGB(248, 248, 248),
+					["Tone"] = "Base"
+				},
+				["Instance"] = "Mesh",
+				["Material"] = Enum.Material.Fabric,
+				["MeshId"] = "rbxasset://RClothesContent/6297176322.mesh",
+				["Name"] = "Bra",
+				["Parent"] = {
+					[1] = "Torso"
+				},
+				["Size"] = Vector3.new(1.8829039335250854, 1.1392192840576172, 1.8722314834594727),
+				["TextureId"] = "rbxasset://RClothesContent/shimapan.png",
 				["Transparency"] = 0
 			},
 			["Cow Panty"] = {
@@ -10066,6 +10101,15 @@ function RoClothes(Player)
 				"Right Nipple"
 			}
 		},
+		["Miku Bra"] = {
+			["Weld"] = {
+				[1] = "Miku Bra",
+			},
+			["Unvisible"] = {
+				"Left Nipple",
+				"Right Nipple"
+			}
+		},
 		["Cow Panty"] = {
 			["Weld"] = {
 				[1] = "Cow Panty",
@@ -10181,6 +10225,11 @@ function RoClothes(Player)
 		["Panty 2"] = {
 			["Weld"] = {
 				[1] = "Panty 2",
+			},
+		},
+		["Shimapan"] = {
+			["Weld"] = {
+				[1] = "Shimapan",
 			},
 		},
 		["Roblox Breasts Clothing"] = {
@@ -12142,34 +12191,56 @@ function RoClothes(Player)
 	end
 
 	function Function.ShirtTexture(ObjectInstance, Character, Extra, Data)	
-		if Extra.Shirt and table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt") then
-			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
-			SP.ColorMap = Extra.Shirt.ShirtTemplate
+		if Extra.Shirt and Extra.Shirt.ShirtTemplate and table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt") then
+			if ObjectInstance.Material == Enum.Material.Glass then
+				ObjectInstance.TextureID = Extra.Shirt.ShirtTemplate
+			else
+				local SP = Instance.new("SurfaceAppearance", ObjectInstance)
+				SP.ColorMap = Extra.Shirt.ShirtTemplate
+			end
 		end
 	end
 
 	function Function.PantsTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Pants and table.find(PlayerData[Data].CurrentClothes, "Roblox Pants") then
-			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
-			SP.ColorMap = Extra.Pants.PantsTemplate
+		if Extra.Pants and Extra.Pants.PantsTemplate and table.find(PlayerData[Data].CurrentClothes, "Roblox Pants") then
+			if ObjectInstance.Material == Enum.Material.Glass then
+				ObjectInstance.TextureID = Extra.Pants.PantsTemplate
+			else
+				local SP = Instance.new("SurfaceAppearance", ObjectInstance)
+				SP.ColorMap = Extra.Pants.PantsTemplate
+			end
 		end
 	end
 
 	function Function.TorsoShirtTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Shirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt") or table.find(PlayerData[Data].CurrentClothes, "New Woman") or table.find(PlayerData[Data].CurrentClothes, "Roblox Breasts Clothing")) then
-			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
-			SP.ColorMap = Extra.Shirt.ShirtTemplate
-			SP.AlphaMode = Enum.AlphaMode.Transparency
-			ObjectInstance.Transparency = 0
+		if Extra.Shirt and Extra.Shirt.ShirtTemplate and (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt") or table.find(PlayerData[Data].CurrentClothes, "New Woman") or table.find(PlayerData[Data].CurrentClothes, "Roblox Breasts Clothing")) then
+			if ObjectInstance.Material == Enum.Material.Glass or ObjectInstance:HasTag("RCGlassMat") then
+				ObjectInstance.TextureID = Extra.Shirt.ShirtTemplate
+				if ObjectInstance.Transparency < 1 then
+					ObjectInstance.Transparency = 0.011
+				end
+			else
+				local SP = Instance.new("SurfaceAppearance", ObjectInstance)
+				SP.ColorMap = Extra.Shirt.ShirtTemplate
+				SP.AlphaMode = Enum.AlphaMode.Transparency
+				ObjectInstance.Transparency = 0
+			end
 		end
 	end
 
 	function Function.TorsoPantsTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Pants") or table.find(PlayerData[Data].CurrentClothes, "Roblox Breasts Clothing")) then
-			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
-			SP.ColorMap = Extra.Pants.PantsTemplate
-			SP.AlphaMode = Enum.AlphaMode.Transparency
-			ObjectInstance.Transparency = 0
+		if Extra.Pants and Extra.Pants.PantsTemplate and (table.find(PlayerData[Data].CurrentClothes, "Roblox Pants")) then
+			if ObjectInstance.Material == Enum.Material.Glass or ObjectInstance:HasTag("RCGlassMat") then
+				ObjectInstance.TextureID = Extra.Pants.PantsTemplate
+				if ObjectInstance.Transparency < 1 then
+					ObjectInstance.Transparency = 0.011
+				end
+			else
+				local SP = Instance.new("SurfaceAppearance", ObjectInstance)
+				SP.ColorMap = Extra.Pants.PantsTemplate
+				SP.AlphaMode = Enum.AlphaMode.Transparency
+				ObjectInstance.Transparency = 0
+			end
 		end
 	end
 
@@ -12408,7 +12479,13 @@ function RoClothes(Player)
 		local PData = PlayerData[Data]
 		local appliedOrgans = {
 			PData.CurrentPartList["Organ"]["Left Arm"],
-			PData.CurrentPartList["Organ"]["Right Arm"]
+			PData.CurrentPartList["Organ"]["Right Arm"],
+		}
+		local appliedTOrgans = {
+			PData.CurrentPartList["Clothes"]["Torso Shirt"],
+			PData.CurrentPartList["Clothes"]["Breasts Shirt"],
+			PData.CurrentPartList["Clothes"]["Breasts Shirt 2"],
+			PData.CurrentPartList["Clothes"]["Breasts Shirt 3"]
 		}
 		if Visible == false then
 			for i, v in pairs(appliedOrgans) do
@@ -12429,8 +12506,28 @@ function RoClothes(Player)
 					end
 				end
 			end
+			for i, v in pairs(appliedTOrgans) do
+				if v:FindFirstChild(v.Name.. "OILOVERLAY") then
+					local s = v:FindFirstChild(v.Name.. "OILOVERLAY")
+					if PData.HPClothes.Shirt ~= "" and not tonumber(PData.HPClothes.Shirt) then
+						s.TextureID = PData.HPClothes.Shirt.ShirtTemplate
+					else
+						s.Transparency = 1
+						s:SetAttribute("MaxTransparenyRC",1)
+					end
+				else
+					if PData.HPClothes.Shirt ~= "" and not tonumber(PData.HPClothes.Shirt) then
+						if v.Name == "Torso Shirt" then
+							v:SetAttribute("maxDeterminedRC",false)
+							v:SetAttribute("MaxTransparenyRC",nil)
+							v.Transparency = v.Parent.Transparency
+						end
+						Function.TorsoShirtTexture(v,nil,{Shirt = PData.HPClothes.Shirt},Data)
+					end
+				end
+			end
 
-			if PData.HPClothes.Shirt ~= "" and not tonumber(PData.HPClothes.Shirt) then
+			--[[if PData.HPClothes.Shirt ~= "" and not tonumber(PData.HPClothes.Shirt) then
 				if not PData.HPClothes.Pants then
 					local v = PData.CurrentPartList["Organ"]["Torso"]
 					if v:FindFirstChild(v.Name.. "OILOVERLAY") then
@@ -12440,7 +12537,7 @@ function RoClothes(Player)
 						Function.ShirtTexture(PData.CurrentPartList["Organ"]["Torso"],c,{Shirt = PData.HPClothes.Shirt},Data)
 					end
 				end
-			end
+			end]]
 		else
 			for i, v in pairs(appliedOrgans) do
 				if v:FindFirstChild(v.Name.. "OILOVERLAY") then
@@ -12458,8 +12555,24 @@ function RoClothes(Player)
 					end
 				end
 			end
+			for i, v in pairs(appliedTOrgans) do
+				if v:FindFirstChild(v.Name.. "OILOVERLAY") then
+					local s = v:FindFirstChild(v.Name.. "OILOVERLAY")
+					if c:FindFirstChildOfClass("Shirt") then
+						s:SetAttribute("MaxTransparenyRC",nil)
+						s.TextureID = c:FindFirstChildOfClass("Shirt").ShirtTemplate
+					end
+				else
+					if v:FindFirstChildOfClass("SurfaceAppearance") then
+						v:FindFirstChildOfClass("SurfaceAppearance"):Destroy()
+					end
+					if c:FindFirstChildOfClass("Shirt") then
+						Function.TorsoShirtTexture(v,c,{Shirt = c:FindFirstChildOfClass("Shirt")},Data)
+					end
+				end
+			end
 
-			local v = PData.CurrentPartList["Organ"]["Torso"]
+			--[[local v = PData.CurrentPartList["Organ"]["Torso"]
 			if (not c:FindFirstChildOfClass("Pants") or not PData.HPClothes.Pants) and v:FindFirstChildOfClass("SurfaceAppearance") then
 				if v:FindFirstChild(v.Name.. "OILOVERLAY") then
 					local s = v:FindFirstChild(v.Name.. "OILOVERLAY")
@@ -12467,7 +12580,7 @@ function RoClothes(Player)
 				else
 					PData.CurrentPartList["Organ"]["Torso"]:FindFirstChildOfClass("SurfaceAppearance"):Destroy()
 				end
-			end
+			end]]
 		end
 	end
 
@@ -12478,7 +12591,10 @@ function RoClothes(Player)
 			PData.CurrentPartList["Organ"]["Left Leg"],
 			PData.CurrentPartList["Organ"]["Right Leg"],
 			PData.CurrentPartList["Organ"]["Left Butt"],
-			PData.CurrentPartList["Organ"]["Right Butt"]
+			PData.CurrentPartList["Organ"]["Right Butt"],
+			PData.CurrentPartList["Organ"]["Breasts Pants"],
+			PData.CurrentPartList["Organ"]["Breasts Pants 2"],
+			PData.CurrentPartList["Organ"]["Breasts Pants 3"]
 		}
 
 		if Visible == false then
@@ -14246,7 +14362,7 @@ function RoClothes(Player)
 			local amountFinished = 0
 			for _, Id in pairs(AccessoryList) do
 				task.spawn(function()
-					local success = pcall(function()
+					local success, output = pcall(function()
 						local AccessoryInfo = MPS:GetProductInfo(Id)
 						local Type = AccessoryType[AccessoryInfo.AssetTypeId]
 
@@ -14257,7 +14373,7 @@ function RoClothes(Player)
 						end
 					end)
 					if not success then
-						warn('Accessory ID "'..Id..'" is invalid. Please make sure ID is an ACCESSORY and is not content deleted.' )
+						warn('Accessory ID "'..Id..'" is invalid. Please make sure ID is an ACCESSORY and is not content deleted. ('.. output .. ")")
 					else
 						IsAdded = true
 					end
@@ -17858,6 +17974,14 @@ function RoClothes(Player)
 							end
 						end
 					end
+
+					if Part.Material == Enum.Material.Glass and Part.Transparency >= 1 then
+						Part:AddTag("RCGlassMat")
+						Part.Material = Enum.Material.Neon
+					elseif Part.Material == Enum.Material.Neon and Part:HasTag("RCGlassMat") and Part.Transparency < 1 then
+						Part:RemoveTag("RCGlassMat")
+						Part.Material = Enum.Material.Glass
+					end
 				end
 			end
 
@@ -19873,7 +19997,10 @@ function RoClothes(Player)
 		end
 
 		if loadupBundle ~= nil and Bundle[loadupBundle] then
-			PlayerData[Player.Name].CurrentBundle = loadupBundle
+			local v = Bundle[loadupBundle]
+			if (not v.ClothingBundle or v.ClothingBundle == false) and (not v.IsPreset or v.IsPreset == false) then
+				PlayerData[Player.Name].CurrentBundle = loadupBundle
+			end
 			checkBundle(Bundle[loadupBundle])
 		elseif loadupBundle ~= nil and loadupBundle ~= "" then
 			warn('No bundle named "'.. loadupBundle ..'" was found!')
