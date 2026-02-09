@@ -17500,6 +17500,90 @@ function RoClothes(Player)
 				["Face"] = false, 
 			}, 
 		},
+		["geen elien"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(161, 196, 140),
+				["LeftArmColor3"] = Color3.fromRGB(161, 196, 140),
+				["RightArmColor3"] = Color3.fromRGB(161, 196, 140),
+				["LeftLegColor3"] = Color3.fromRGB(161, 196, 140),
+				["RightLegColor3"] = Color3.fromRGB(161, 196, 140),
+				["TorsoColor3"] = Color3.fromRGB(161, 196, 140),
+			},
+			["Accessory"] = {
+				18283339307,
+				6950160650,
+				11268790321,
+				14648858784,
+				15765840273,
+				18655439944,
+			},
+			["Clothes"] = {
+				["Shirt"] = 6950160650,
+				["Pants"] = 15765840273,
+			},
+			["TClothes"] = {
+				["Shirt"] = 0,
+				["Pants"] = 0
+			},	
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt",
+				"Roblox Pants",
+				'Pussy Closed',
+			},
+			["Preset"] = {
+				Tone = "Base",
+				Face = false,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				PositionPhysicsMultiply = 1.4,
+				RotationPhysicsMultiply = 4,
+				BreastsScale = 1.2,
+				ButtsScale = 1.1,
+				LegsScale = 1.03,
+				BreastsType = 2,
+				TorsoType = 3,
+				ArmType = 2,
+				LegsType = 2,
+				ButtType = 1,
+				HardcoreHP = true,
+				TopHP = 50,
+				BottomHP = 50,
+				DamageSFX = 0.1,
+				Volume = 40.5,
+			},
+			["NippleColor"] = Color3.fromRGB(142, 200, 120),
+		},
+		["uzi"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
+			},
+			["Accessory"] = {
+				13458149966,
+				18913793706,
+				105516726066182,
+				107824922900477,
+				15632786435,
+				18154390923,
+				90836116961165
+			},
+			["Clothes"] = {
+				["Shirt"] = 122521506246125,
+				["Pants"] = 103126565751528
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt",
+				"Roblox Pants",
+			}
+		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
 			["Clothing"] = {
