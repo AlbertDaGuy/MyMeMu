@@ -17584,6 +17584,206 @@ function RoClothes(Player)
 				"Roblox Pants",
 			}
 		},
+		["champion 1x4"] = {
+			["Body Color"] = {
+                ["HeadColor3"] = Color3.fromRGB(0, 0, 0),
+                ["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
+                ["RightArmColor3"] = Color3.fromRGB(0, 0, 0),
+                ["LeftLegColor3"] = Color3.fromRGB(0, 0, 0),
+                ["RightLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["TorsoColor3"] = Color3.fromRGB(0, 0, 0),
+			},
+			["Accessory"] = {
+			    5621716214,
+			    18501577792,
+			    112526102727001,
+			    136444880759454,
+			    95485071397194,
+			    77035872239143,
+			    95645635597629,
+			    13958934911,
+			},
+			["Clothes"] = {
+				["Shirt"] = 14632333513,
+				["Pants"] = 14632335824,
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Pants",
+				"Roblox Butt Shirt Method2",
+				"Pussy Closed",
+			},
+			["Preset"] = {
+				Tone = "Use NippleColor",
+				Face = false,
+				AccessorySizeLock = true,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				RealtimeBodyTransparency = false,
+				PositionPhysicsMultiply = 5,
+				RotationPhysicsMultiply = 5,
+				BreastsScale = 1.2,
+				ButtsScale = 1.1,
+				LegsScale = 1.2,
+				BreastsType = 2,
+				TorsoType = 3,
+				ArmType = 2,
+				LegsType = 2,
+				ButtType = 3,
+				HardcoreHP = true,
+                TopHP = 25,
+                BottomHP = 25,
+                DamageSFX = 5,
+                Volume = 2.5,
+				PussyScale = 1.5,
+			},
+			["Recolor"] = {
+				["Pussy Closed"] = {
+					["Primary"] = Color3.fromRGB(255, 195, 11),
+				},
+			},
+			["NippleColor"] = Color3.fromRGB(255, 195, 11),
+		},
+		["Jane doe"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 225, 102),
+				["LeftArmColor3"] = Color3.fromRGB(255, 225, 102),
+				["RightArmColor3"] = Color3.fromRGB(255, 225, 102),
+				["LeftLegColor3"] = Color3.fromRGB(255, 225, 102),
+				["RightLegColor3"] = Color3.fromRGB(255, 225, 102),
+				["TorsoColor3"] = Color3.fromRGB(255, 225, 102),
+			},
+			["Accessory"] = {
+				75544676883867,
+				136028337225896,
+				84662881406891,
+				73494226868368,
+				89590134252452,
+				121899541182373,
+				9151373128,
+				90486854844633,
+				84136416897294,
+				107560414249062,
+				18684488583,
+			},
+			["Clothes"] = {
+				["Shirt"] = 5300947794,
+				["Pants"] = 75596850176561
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt",
+				"Roblox Pants",
+			},
+		},
+		["Jane doe *another*"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 225, 102),
+				["LeftArmColor3"] = Color3.fromRGB(255, 225, 102),
+				["RightArmColor3"] = Color3.fromRGB(255, 225, 102),
+				["LeftLegColor3"] = Color3.fromRGB(255, 225, 102),
+				["RightLegColor3"] = Color3.fromRGB(255, 225, 102),
+				["TorsoColor3"] = Color3.fromRGB(255, 225, 102),
+			},
+			["Accessory"] = {
+				118959316237192,
+				48474294,
+				12178699754,
+				18646402256,
+				14426634470,
+				131478188443945
+			},
+			["Clothes"] = {
+				["Shirt"] = 9474920360,
+				["Pants"] = 18528428285
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt",
+				"Roblox Pants",
+			},
+		},
+		["jester"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 255, 355),
+				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
+			},
+			["Accessory"] = {
+				71292827554187,
+				125643354562931,
+				78680993980618,
+				111277977017799,
+				14618207727,
+				107042633501139
+			},
+			["Clothes"] = {
+				["Shirt"] = 126956443824012,
+				["Pants"] = 72702248937879
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing Type 2",
+				"Roblox Shirt",
+				"Roblox Butt Shirt",
+				"Roblox Pants",
+				"Pussy Closed",
+			},
+			["Preset"] = {
+				Tone = "Dark",
+				Face = false,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				PositionPhysicsMultiply = 1,
+				RotationPhysicsMultiply = 4,
+				BreastsScale = 1.12,
+				ButtsScale = 1.13,
+				LegsScale = 1.05,
+				BreastsType = 2,
+				TorsoType = 3,
+				ArmType = 2,
+				LegsType = 3,
+				ButtType = 3,
+				HardcoreHP = false,
+				TopHP = 50,
+				BottomHP = 50,
+				DamageSFX = 5,
+				Volume = 1.2,
+			},
+		},
+		["moth"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
+			},
+			["Accessory"] = {
+				134842521663869,
+				106087296768719,
+				7546409288,
+				15563053826,
+				135997706439525,
+				11492267232
+			},
+			["Clothes"] = {
+				["Shirt"] = 16331705488,
+				["Pants"] = 8983623541
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt",
+				"Roblox Pants",
+			},
+		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
 			["Clothing"] = {
