@@ -9956,8 +9956,8 @@ function RoClothes(Player)
 				1082932,
 				6682341860,
 				7838745732,
-				9424089991
 			},
+			["TailAccessory"] = {9424089991},
 			["Clothes"] = {
 				Shirt = "13408990402",
 				Pants = "13408991906"
@@ -12698,8 +12698,8 @@ function RoClothes(Player)
 				94045599514489,
 			},
 			["Clothes"] = {
-				["Shirt"] = 103775002347445,
-				["Pants"] = 103882690407604,
+				["Shirt"] = 126495242638106,
+				["Pants"] = 121516100199302,
 			},
 			["TClothes"] = {
 				["Shirt"] = 0,
@@ -12750,7 +12750,7 @@ function RoClothes(Player)
 				94045599514489,
 			},
 			["Clothes"] = {
-				["Shirt"] = 103775002347445,
+				["Shirt"] = 97468081689609,
 				["Pants"] = 117391128200989,
 			},
 			["TClothes"] = {
@@ -13377,8 +13377,8 @@ function RoClothes(Player)
 				11568711453,
 				18605619191,
 				12929887151,
-				12380949436
 			},
+			["TailAccessory"] = {12380949436},
 			["Clothes"] = {
 				["Shirt"] = 131890800293249,
 				["Pants"] = 79377748317745,
@@ -13433,9 +13433,9 @@ function RoClothes(Player)
 				122229696778541,
 				13176832368,
 				15420050706,
-				13521843752,
 				17591211314,
 			},
+			["TailAccessory"] = {13521843752},
 			["Clothes"] = {
 				["Shirt"] = 14340479631,
 				["Pants"] = 14340515892,
@@ -13720,10 +13720,10 @@ function RoClothes(Player)
 				15411276678,
 				14832978441,
 				18605602052,
-				140565699561121,
 				12114574600,
 				12114570675,
 			},
+			["TailAccessory"] = {140565699561121},
 			["Clothes"] = {
 				["Shirt"] = 11399172154,
 				["Pants"] = 11399179411,
@@ -13779,10 +13779,10 @@ function RoClothes(Player)
 				13947614558,
 				12635071012,
 				12635078223,
-				84631216446106,
 				16164478620,
 				15463701576,
 			},
+			["TailAccessory"] = {84631216446106},
 			["Clothes"] = {
 				["Shirt"] = 17539765980,
 				["Pants"] = 17536896932,
@@ -13839,11 +13839,11 @@ function RoClothes(Player)
 				12014310349,
 				12744296006,
 				14124946868,
-				105672837116770,
 				12114479355,
 				12114394404,
 				12114386668,
 			},
+			["TailAccessory"] = {105672837116770},
 			["Clothes"] = {
 				["Shirt"] = 15279055291,
 				["Pants"] = 11115369279,
@@ -13898,11 +13898,11 @@ function RoClothes(Player)
 				12014310349,
 				12744296006,
 				14124946868,
-				105672837116770,
 				12114479355,
 				12114394404,
 				12114386668,
 			},
+			["TailAccessory"] = {105672837116770},
 			["Clothes"] = {
 				["Shirt"] = 136866110716652,
 				["Pants"] = 121017156763209,
@@ -14183,8 +14183,8 @@ function RoClothes(Player)
 			},
 			["Accessory"] = {
 				100470217577026,
-				80881063080650,
 			},
+			["TailAccessory"] = {80881063080650},
 			["Clothes"] = {
 				["Shirt"] = 75411832678026,
 				["Pants"] = 129009392852235,
@@ -14236,8 +14236,8 @@ function RoClothes(Player)
 			},
 			["Accessory"] = {
 				100470217577026,
-				80881063080650,
 			},
+			["TailAccessory"] = {80881063080650},
 			["Clothes"] = {
 				["Shirt"] = 11237171635,
 				["Pants"] = 137151207065378,
@@ -14702,8 +14702,8 @@ function RoClothes(Player)
 				14330455690,
 				127655703506889,
 				138153132128356,
-				13521847144,
 			},
+			["TailAccessory"] = {13521847144},
 			["Clothes"] = {
 				["Shirt"] = 97815758967089,
 				["Pants"] = 105455222427244,
@@ -14759,10 +14759,10 @@ function RoClothes(Player)
 				14330455690,
 				127655703506889,
 				138153132128356,
-				13521847144,
 				85719480751488,
 				13812136099
 			},
+			["TailAccessory"] = {13521847144},
 			["Clothes"] = {
 				["Shirt"] = 12351374920,
 				["Pants"] = 12351376425,
@@ -14990,9 +14990,9 @@ function RoClothes(Player)
 			},
 			["Accessory"] = {
 				13357776811,
-				13357889206,
 				12114479355,
 			},
+			["TailAccessory"] = {13357889206},
 			["Clothes"] = {
 				["Shirt"] = 16623991123,
 				["Pants"] = 16624246459,
@@ -15052,8 +15052,8 @@ function RoClothes(Player)
 				14819015231,
 				14819018377,
 				14826720404,
-				14818588787,
 			},
+			["TailAccessory"] = {14818588787},
 			["Clothes"] = {
 				["Shirt"] = 14678393895,
 				["Pants"] = 14678403661,
@@ -16234,9 +16234,9 @@ function RoClothes(Player)
 				12114386668,
 				12114394404,
 				12114481827,
-				79837499221675,
 				113065928330581,
 			},
+			["TailAccessory"] = {79837499221675},
 			["Clothes"] = {
 				["Shirt"] = 76834547109829,
 				["Pants"] = 127362287001760,
@@ -16289,9 +16289,9 @@ function RoClothes(Player)
 			["Accessory"] = {
 				11492263747,
 				7331758645,
-				109833211129718,
 				100574587662125,
 			},
+			["TailAccessory"] = {109833211129718},
 			["Clothes"] = {
 				["Shirt"] = 5109720924,
 				["Pants"] = 5109722847,
@@ -17783,6 +17783,108 @@ function RoClothes(Player)
 				"Roblox Butt Shirt",
 				"Roblox Pants",
 			},
+		},
+		["Juggernaut"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
+			},
+			["Accessory"] = {
+			    17022542890,
+	    	    17332669903,
+		        78766169226947,
+		    	82886733437515,
+		    	91676240807065,
+		    	114265857196234,
+		    	118034654633584,
+				135553910201322,
+                9155545064,
+			},
+			["Clothes"] = {
+			    ["Shirt"] = 5648064938,
+				["Pants"] = 17269244922,
+			},
+			["Clothing"] = {
+				"Roblox Butt Shirt",
+				"Roblox Shirt",
+				"Roblox Butt Shirt Method2",
+				"Roblox Pants",
+				"Roblox Breasts Clothing",
+				"Vest",
+			},
+			["Preset"] = {
+				Tone = "Base",
+				Face = false,
+				AccessorySizeLock = true,
+				BodyPartPhysics = false,
+				RealtimeBodyTransparency = false,
+				BreastsScale = 1.05,
+				ButtsScale = 1,
+				LegsScale = 1,
+				BreastsType = 1,
+				TorsoType = 3,
+				ArmType = 2,
+				LegsType = 1,
+				ButtType = 1,
+				TopHP = 70,
+				BottomHP = 75,
+			}
+		},
+		["Monster Energy Girl"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(70, 70, 70),
+				["LeftArmColor3"] = Color3.fromRGB(70, 70, 70),
+				["RightArmColor3"] = Color3.fromRGB(70, 70, 70),
+				["LeftLegColor3"] = Color3.fromRGB(70, 70, 70),
+				["RightLegColor3"] = Color3.fromRGB(70, 70, 70),
+				["TorsoColor3"] = Color3.fromRGB(70, 70, 70),
+			},
+			["Accessory"] = {
+		    11420201757,
+			12578142240,
+			17309699768,
+			18730196901,
+			116791155484173,
+			89496973016577,
+			16550587268,
+			},
+			["Clothes"] = {
+				["Shirt"] = 10860643727,
+				["Pants"] = 109426423082447,
+			},
+			["Clothing"] = {
+				"Roblox Breasts Clothing",
+				"Roblox Shirt",
+				"Roblox Butt Shirt Method2",
+				"Roblox Pants",
+				"Pussy Closed",
+			},
+			["Preset"] = {
+				Tone = "Use NippleColor",
+				Face = false,
+				BodyPartPhysics = true,
+				PhysicsObeyGravity = true,
+				PositionPhysicsMultiply = 1.4,
+				RotationPhysicsMultiply = 4,
+				BreastsScale = 1.1,
+				ButtsScale = 1.12,
+				LegsScale = 1,
+				BreastsType = 1,
+				TorsoType = 1,
+				ArmType = 1,
+				LegsType = 2,
+				ButtType = 1,
+				HardcoreHP = true,
+				TopHP = 25,
+				BottomHP = 25,
+				DamageSFX = 0.1,
+				Volume = 100.2,
+			},
+			["NippleColor"] = Color3.fromRGB(125, 125, 125),
 		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
