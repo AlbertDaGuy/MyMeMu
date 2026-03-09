@@ -19698,12 +19698,12 @@ function RoClothes(Player)
 		},
 		["BUNNY LAX"] = {
 			["Body Color"] = {
-				["HeadColor3"] = Color3.fromRGB(0,0,0),
-				["LeftArmColor3"] = Color3.fromRGB(0,0,0),
-				["RightArmColor3"] = Color3.fromRGB(0,0,0),
-				["LeftLegColor3"] = Color3.fromRGB(0,0,0),
-				["RightLegColor3"] = Color3.fromRGB(0,0,0),
-				["TorsoColor3"] = Color3.fromRGB(0,0,0),
+				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
+				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
+				["RightArmColor3"] = Color3.fromRGB(0, 0, 0),
+				["LeftLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["RightLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["TorsoColor3"] = Color3.fromRGB(0, 0, 0),
 			},
 			["Accessory"] = {
 				77765348931780,
@@ -19721,7 +19721,7 @@ function RoClothes(Player)
 				"Roblox Shirt",
 				"Roblox Pants",
 				"Pussy Closed",
-				"Oiled [OLDMETHOD]",
+				"Oiled",
 			},
 			["Preset"] = {
 				Tone = "Dark",
@@ -19809,7 +19809,7 @@ function RoClothes(Player)
 				"Nipple Piercing 20",
 				"Nipple Piercing 19",
 				"Nipple Piercing 1",
-				"Oiled [SKINONLY]",
+				"Oiled",
 				"Pussy Closed",
 			},
 			["MeshEdit"] = {
@@ -19905,7 +19905,7 @@ function RoClothes(Player)
 				"Nipple Piercing 1",
 				"Nipple Piercing 20",
 				"Bodyless Clothes",
-				"Oiled [SKINONLY]",
+				"Oiled",
 				"Pussy Closed",
 			},
 			["NippleColor"] = Color3.fromRGB(90, 60, 40), 
@@ -20027,7 +20027,7 @@ function RoClothes(Player)
 				"Roblox Shirt",
 				"Butt Freckles+",
 				"Breast Freckles+",
-				"Oiled [SKINONLY]",
+				"Oiled",
 			},
 			["MeshEdit"] = {
 				["Armor"] = {
