@@ -9777,7 +9777,7 @@ function RoClothes(Player)
 				LegsType = 3
 			},
 		},
-		["Sushi (Swimsuit)"] = {
+		["Z - Sushi (Swimsuit)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(116, 134, 158),
 				["LeftArmColor3"] = Color3.fromRGB(116, 134, 158),
@@ -9831,7 +9831,7 @@ function RoClothes(Player)
 				Volume = 1.2,
 			}
 		},
-		["Eunoia"] = {
+		["Z - Eunoia"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -9889,7 +9889,7 @@ function RoClothes(Player)
 				Volume = 2.5,
 			}
 		},
-		["Lumi"] = {
+		["Z - Lumi"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(245, 205, 48),
 				["LeftArmColor3"] = Color3.fromRGB(245, 205, 48),
@@ -9938,7 +9938,7 @@ function RoClothes(Player)
 				Volume = 1.5,
 			}
 		},
-		["ConeGirl"] = {
+		["Z - ConeGirl"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(248, 248, 248),
 				["LeftArmColor3"] = Color3.fromRGB(248, 248, 248),
@@ -9963,7 +9963,7 @@ function RoClothes(Player)
 				Pants = "13408991906"
 			}
 		},
-		["Ultimate TBB"] = {
+		["Z - Ultimate TBB"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -10024,7 +10024,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Demon (red/nun)"] = {
+		["Z - Demon (red/nun)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(163,75,74),
 				["LeftArmColor3"] = Color3.fromRGB(163,75,74),
@@ -10077,7 +10077,7 @@ function RoClothes(Player)
 				ButtType = 3,
 			}
 		},
-		["Tiger Shark"] = {
+		["Z - Tiger Shark"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(137,136,150),
 				["LeftArmColor3"] = Color3.fromRGB(137,136,150),
@@ -10131,7 +10131,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(91, 93, 105),
 		},
-		["Whiteyo"] = {
+		["Z - Whiteyo"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -10155,7 +10155,7 @@ function RoClothes(Player)
 				["Pants"] = 129143372997561,
 			}
 		},
-		["Mazu"] = {
+		["Z - Mazu"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 204, 153),
 				["LeftArmColor3"] = Color3.fromRGB(255, 204, 153),
@@ -10202,7 +10202,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 152, 220),
 		},
-		["Ram"] = {
+		["Z - Ram"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(255, 204, 153),
@@ -10246,7 +10246,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 152, 220),
 		},
-		["Luna"] = {
+		["Z - Luna"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 204, 153),
 				["LeftArmColor3"] = Color3.fromRGB(255, 204, 153),
@@ -10291,7 +10291,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 152, 220),
 		},
-		["Kitsune"] = {
+		["Z - Kitsune"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(204, 142, 105),
 				["LeftArmColor3"] = Color3.fromRGB(204, 142, 105),
@@ -10335,7 +10335,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 152, 220),
 		},
-		["Qin (Halloween)"] = {
+		["Z - Qin (Halloween)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(162, 75, 75),
 				["LeftArmColor3"] = Color3.fromRGB(162, 75, 75),
@@ -10384,7 +10384,7 @@ function RoClothes(Player)
 				Volume = 1.2,
 			}
 		},
-		["Lamp"] = {
+		["Z - Lamp"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(215, 197, 154),
 				["LeftArmColor3"] = Color3.fromRGB(215, 197, 154),
@@ -10444,7 +10444,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(149, 126, 104),
 		},
-		["Trans Girl"] = {
+		["Z - Trans Girl"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -10491,7 +10491,7 @@ function RoClothes(Player)
 				Volume = 2.5,
 			}
 		},
-		["Kawaii blue bunny"] = {
+		["Z - Kawaii blue bunny"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -10540,7 +10540,7 @@ function RoClothes(Player)
 				Volume = 2.5,
 			}
 		},
-		["Cheerer"] = {
+		["Z - Cheerer"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(254, 152, 219),
 				["LeftArmColor3"] = Color3.fromRGB(254, 200, 200),
@@ -10603,7 +10603,7 @@ function RoClothes(Player)
 			},
 			}
 		},
-		["Celestial"] = {
+		["Z - Celestial"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -10662,7 +10662,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(102, 102, 102),
 		},
-		["Iris (Rusmynth)"] = {
+		["Z - Iris (Rusmynth)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(203, 143, 105),
 				["LeftArmColor3"] = Color3.fromRGB(203, 143, 105),
@@ -10714,7 +10714,7 @@ function RoClothes(Player)
 				Volume = 1.5,
 			}
 		},
-		["Sk8r Girl"] = {
+		["Z - Sk8r Girl"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(161, 165, 162),
 				["LeftArmColor3"] = Color3.fromRGB(161, 165, 162),
@@ -10765,7 +10765,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Dummy (Female)"] = {
+		["Z - Dummy (Female)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(162, 162, 165),
 				["LeftArmColor3"] = Color3.fromRGB(162, 162, 165),
@@ -10802,7 +10802,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(99, 99, 99),
 		},
-		["Moony"] = {
+		["Z - Moony"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -10854,7 +10854,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(100, 200, 150),
 		},
-		["Van1ty"] = {
+		["Z - Van1ty"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(254, 200, 200),
 				["LeftArmColor3"] = Color3.fromRGB(254, 200, 200),
@@ -10914,7 +10914,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Van1ty (Displacement)"] = {
+		["Z - Van1ty (Displacement)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(254, 200, 200),
 				["LeftArmColor3"] = Color3.fromRGB(254, 200, 200),
@@ -10974,7 +10974,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Uni"] = {
+		["Z - Uni"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 183, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 183, 145),
@@ -11032,7 +11032,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(187, 119, 119),
 		},
-		["Skittle TBB"] = {
+		["Z - Skittle TBB"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11095,7 +11095,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(96, 31, 158),
 		},
-		["Martyr TBB"] = {
+		["Z - Martyr TBB"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11155,7 +11155,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(48, 25, 52),
 		},
-		["Ivory TBB"] = {
+		["Z - Ivory TBB"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11213,7 +11213,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Sashimi"] = {
+		["Z - Sashimi"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11274,7 +11274,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 150, 175),
 		},
-		["Purple Hair Girl"] = {
+		["Z - Purple Hair Girl"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(234, 184, 146),
 				["LeftArmColor3"] = Color3.fromRGB(234, 184, 146),
@@ -11318,7 +11318,7 @@ function RoClothes(Player)
 				Volume = 1.2,
 			}
 		},
-		["Observer"] = {
+		["Z - Observer"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -11378,7 +11378,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 255, 255),
 		},
-		["Observer (Casual)"] = {
+		["Z - Observer (Casual)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -11438,7 +11438,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 255, 255),
 		},
-		["Abysso The Shark"] = {
+		["Z - Abysso The Shark"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(174, 147, 130),
 				["LeftArmColor3"] = Color3.fromRGB(174, 147, 130),
@@ -11489,7 +11489,7 @@ function RoClothes(Player)
 				Volume = 1.2,
 			}
 		},
-		["Celestial (Frutiger)"] = {
+		["Z - Celestial (Frutiger)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11554,7 +11554,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(173, 216, 230),
 		},
-		["Artful"] = {
+		["Z - Artful"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11613,7 +11613,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(80, 80, 80),
 		},
-		["sea bun"] = {
+		["Z - sea bun"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -11670,7 +11670,7 @@ function RoClothes(Player)
                 Volume = 2.5,
 			}
 		},
-		["Senko-San"] = {
+		["Z - Senko-San"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 183, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 183, 145),
@@ -11719,7 +11719,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(187, 119, 119),
 		},
-		["Silly eepy"] = {
+		["Z - Silly eepy"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 183, 138),
 				["LeftArmColor3"] = Color3.fromRGB(233, 183, 138),
@@ -11772,7 +11772,7 @@ function RoClothes(Player)
                 Volume = 2.5,
 		    }
 	    },
-		["Sleepy fox"] = {
+		["Z - Sleepy fox"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 183, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 183, 145),
@@ -11823,7 +11823,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(187, 119, 119),
 		},
-		["Yuki"] = {
+		["Z - Yuki"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(165, 165, 165),
 				["LeftArmColor3"] = Color3.fromRGB(165, 165, 165),
@@ -11882,7 +11882,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(125, 125, 125),
 		},
-		["adorable pinkie"] = {
+		["Z - adorable pinkie"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 188, 217),
 				["LeftArmColor3"] = Color3.fromRGB(255, 188, 217),
@@ -11940,7 +11940,7 @@ function RoClothes(Player)
             Volume = 2.5,
 		    }
 	    },
-		["shark sailor"] = {
+		["Z - shark sailor"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(185, 184, 192),
 				["LeftArmColor3"] = Color3.fromRGB(185, 184, 192),
@@ -11999,7 +11999,7 @@ function RoClothes(Player)
                 Volume = 2.5,
 		    }
 	    },
-		["Zeta 7"] = {
+		["Z - Zeta 7"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -12054,7 +12054,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Melody"] = {
+		["Z - Melody"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(188, 130, 96),
 				["LeftArmColor3"] = Color3.fromRGB(188, 130, 96),
@@ -12111,7 +12111,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Rumi the White Shark"] = {
+		["Z - Rumi the White Shark"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -12166,7 +12166,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(0, 0, 0),
 		},
-		["LifeGuard Noob"] = {
+		["Z - LifeGuard Noob"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(245, 205, 48),
 				["LeftArmColor3"] = Color3.fromRGB(245, 205, 48),
@@ -12223,7 +12223,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(125, 125, 125),
 		},
-		["Orky cutesy"] = {
+		["Z - Orky cutesy"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -12284,7 +12284,7 @@ function RoClothes(Player)
             },
 			["NippleColor"] = Color3.fromRGB(0, 0, 0),
 		},
-		["Ran Yakumo"] = {
+		["Z - Ran Yakumo"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 183, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 183, 145),
@@ -12335,7 +12335,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(187, 119, 119),
 		},
-		["berry"] = {
+		["Z - berry"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(235, 217, 68),
 				["LeftArmColor3"] = Color3.fromRGB(235, 217, 68),
@@ -12390,7 +12390,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(92, 40, 14),
 		},
-		["dino genius"] = {
+		["Z - dino genius"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 183, 138),
 				["LeftArmColor3"] = Color3.fromRGB(233, 183, 138),
@@ -12444,7 +12444,7 @@ function RoClothes(Player)
             },
 			["NippleColor"] = Color3.fromRGB(255, 192, 192)
 		},
-		["1x1x1x1 sleepy:3"] = {
+		["Z - 1x1x1x1 sleepy:3"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -12491,7 +12491,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Elegant Woman"] = {
+		["Z - Elegant Woman"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 184, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 184, 145),
@@ -12546,7 +12546,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["MK-23C Juggernaut"] = {
+		["Z - MK-23C Juggernaut"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 184, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 184, 145),
@@ -12599,7 +12599,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["koi fish"] = {
+		["Z - koi fish"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -12659,7 +12659,7 @@ function RoClothes(Player)
             },
 			["NippleColor"] = Color3.fromRGB(255, 146, 72),
 		},
-		["simple maid *bunny*"] = {
+		["Z - simple maid *bunny*"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -12709,7 +12709,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Martyr TBB"] = {
+		["Z - Martyr TBB"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -12775,7 +12775,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(48, 25, 52),
 		},
-		["koi shark twin 1"] = {
+		["Z - koi shark twin 1"] = {
 			["Body Color"] = {
                 ["HeadColor3"] = Color3.fromRGB(255, 255, 255),
                 ["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -12843,7 +12843,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(135, 206, 250),
 		},
-		["caretaker *forsaken version*"] = {
+		["Z - caretaker *forsaken version*"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(210, 180, 142),
 				["LeftArmColor3"] = Color3.fromRGB(210, 180, 142),
@@ -12896,7 +12896,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Vergnius"] = {
+		["Z - Vergnius"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(233, 184, 145),
 				["LeftArmColor3"] = Color3.fromRGB(233, 184, 145),
@@ -12958,7 +12958,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["aiko"] = {
+		["Z - aiko"] = {
 			["Body Color"] = {
                 ["HeadColor3"] = Color3.fromRGB(255, 255, 255),
                 ["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -13029,7 +13029,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 91, 91),
 		},
-		["Bunny Noob"] = {
+		["Z - Bunny Noob"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(244, 204, 67),
 				["LeftArmColor3"] = Color3.fromRGB(244, 204, 67),
@@ -13079,7 +13079,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(244, 204, 67),
 		},
-		["cat:3"] = {
+		["Z - cat:3"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -13130,7 +13130,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["cat guy:3"] = {
+		["Z - cat guy:3"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -13177,7 +13177,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["mirror"] = {
+		["Z - mirror"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 150, 255),
 				["LeftArmColor3"] = Color3.fromRGB(0, 150, 255),
@@ -13228,7 +13228,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["Bacon girl"] = {
+		["Z - Bacon girl"] = {
 			["Body Color"] = {
                 ["HeadColor3"] = Color3.fromRGB(255, 255, 255),
                 ["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -13283,7 +13283,7 @@ function RoClothes(Player)
                 Volume = 2.5,
 			}
 		},
-		["oni (blue)"] = {
+		["Z - oni (blue)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(109, 189, 223),
 				["LeftArmColor3"] = Color3.fromRGB(109, 189, 223),
@@ -13339,7 +13339,7 @@ function RoClothes(Player)
             },
 			["NippleColor"] = Color3.fromRGB(60, 223, 255),
 		},
-		["Teto Utau"] = {
+		["Z - Teto Utau"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(238, 166, 118),
 				["LeftArmColor3"] = Color3.fromRGB(238, 166, 118),
@@ -13389,7 +13389,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(184,118,84),
 		},
-		["Lucy"] = {
+		["Z - Lucy"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -13448,7 +13448,7 @@ function RoClothes(Player)
                 Volume = 2.5,
             }
 		},
-		["solitud"] = {
+		["Z - solitud"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 150, 255),
 				["LeftArmColor3"] = Color3.fromRGB(0, 150, 255),
@@ -13503,7 +13503,7 @@ function RoClothes(Player)
 				Volume = 100.2,
 			}
 		},
-		["leviathan"] = {
+		["Z - leviathan"] = {
 			["Body Color"] = {
                 ["HeadColor3"] = Color3.fromRGB(222, 204, 156),
                 ["LeftArmColor3"] = Color3.fromRGB(222, 204, 156),
@@ -13567,7 +13567,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 216, 216),
 		},
-		["sk8r girl (v2)"] = {
+		["Z - sk8r girl (v2)"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(230, 230, 230),
 				["LeftArmColor3"] = Color3.fromRGB(230, 230, 230),
@@ -13616,7 +13616,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(125, 125, 125),
 		},
-		["Meanie"] = {
+		["Z - Meanie"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -13675,7 +13675,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 216, 216),
 		},
-		["Miku Bikini"] = {
+		["Z - Miku Bikini"] = {
 			["Body Color"] = { 
 				["HeadColor3"] = Color3.fromRGB(255,221,199),
 				["LeftArmColor3"] = Color3.fromRGB(255,221,199),
@@ -13698,7 +13698,7 @@ function RoClothes(Player)
 				"Roblox Pants"
 			}
 		},
-		["Miku"] = {
+		["Z - Miku"] = {
 			["Body Color"] = { 
 				["HeadColor3"] = Color3.fromRGB(255,221,199),
 				["LeftArmColor3"] = Color3.fromRGB(255,221,199),
@@ -13725,7 +13725,7 @@ function RoClothes(Player)
 				"Roblox Pants"
 			}
 		},
-		["Ophelia"] = { 
+		["Z - Ophelia"] = { 
 			["TClothes"] = { 
 				["Shirt"] = 6472549179, 
 				["Pants"] = 6472549478, 
@@ -13799,7 +13799,7 @@ function RoClothes(Player)
 				["Face"] = false, 
 			}, 
 		},
-		["Ramona"] = { 
+		["Z - Ramona"] = { 
 			["TClothes"] = { 
 				["Shirt"] = 11883706273, 
 				["Pants"] = 11885251049, 
@@ -13863,7 +13863,7 @@ function RoClothes(Player)
 				["Face"] = false, 
 			}, 
 		},
-		["geen elien"] = {
+		["Z - geen elien"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(161, 196, 140),
 				["LeftArmColor3"] = Color3.fromRGB(161, 196, 140),
@@ -13918,7 +13918,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(142, 200, 120),
 		},
-		["uzi"] = {
+		["Z - uzi"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -13947,7 +13947,7 @@ function RoClothes(Player)
 				"Roblox Pants",
 			}
 		},
-		["Jane doe *dress*"] = {
+		["Z - Jane doe *dress*"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 225, 102),
 				["LeftArmColor3"] = Color3.fromRGB(255, 225, 102),
@@ -13980,7 +13980,7 @@ function RoClothes(Player)
 				"Roblox Pants",
 			},
 		},
-		["Jane doe *another*"] = {
+		["Z - Jane doe *another*"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 225, 102),
 				["LeftArmColor3"] = Color3.fromRGB(255, 225, 102),
@@ -14008,7 +14008,7 @@ function RoClothes(Player)
 				"Roblox Pants",
 			},
 		},
-		["jester"] = {
+		["Z - jester"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 355),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -14058,7 +14058,7 @@ function RoClothes(Player)
 				Volume = 1.2,
 			},
 		},
-		["moth"] = {
+		["Z - moth"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -14086,7 +14086,7 @@ function RoClothes(Player)
 				"Roblox Pants",
 			},
 		},
-		["Juggernaut"] = {
+		["Z - Juggernaut"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -14136,7 +14136,7 @@ function RoClothes(Player)
 				BottomHP = 75,
 			}
 		},
-		["Monster Energy Girl"] = {
+		["Z - Monster Energy Girl"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(70, 70, 70),
 				["LeftArmColor3"] = Color3.fromRGB(70, 70, 70),
@@ -14188,7 +14188,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(125, 125, 125),
 		},
-		["Apomia"] = {
+		["Z - Apomia"] = {
 			["Accessory"] = {
 				6065523207,
 				14426623369,
@@ -14280,7 +14280,7 @@ function RoClothes(Player)
 				}
 			},
 		},
-		["Harken"] = {
+		["Z - Harken"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(249, 233, 153),
 				["LeftArmColor3"] = Color3.fromRGB(249, 233, 153),
@@ -14369,7 +14369,7 @@ function RoClothes(Player)
 				},
 			}
 		},
-		["Party Noob"] = {
+		["Z - Party Noob"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(245, 205, 48),
 				["LeftArmColor3"] = Color3.fromRGB(245, 205, 48),
@@ -14443,7 +14443,7 @@ function RoClothes(Player)
 				},
 			}
 		},
-		["scp 1471"] = {
+		["Z - scp 1471"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -14473,7 +14473,7 @@ function RoClothes(Player)
 				"Roblox Pants",
 			},
 		},
-		["Hunter-Chan"] = { 
+		["Z - Hunter-Chan"] = { 
 			["TClothes"] = { 
 				["Shirt"] = 0, 
 				["Pants"] = 17863701203, 
@@ -14547,7 +14547,7 @@ function RoClothes(Player)
 				["Face"] = false, 
 			}, 
 		},
-		["Guest666 mommy"] = {
+		["Z - Guest666 mommy"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -14601,7 +14601,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(255, 71, 71),
 		},
-		["bee cool"] = {
+		["Z - bee cool"] = {
 			["Body Color"] = {
 				["LeftLegColor3"] = Color3.fromRGB(245, 205, 48),
 				["LeftArmColor3"] = Color3.fromRGB(245, 205, 48),
@@ -14659,7 +14659,7 @@ function RoClothes(Player)
 				Volume = 2,
 			},
 		},
-		["niko oneshot"] = {
+		["Z - niko oneshot"] = {
 			["Body Color"] = {
                 ["HeadColor3"] = Color3.fromRGB(124, 63, 63),
                 ["LeftArmColor3"] = Color3.fromRGB(124, 63, 63),
@@ -14716,7 +14716,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(186, 117, 117),
 		},
-		["Azalea"] = {
+		["Z - Azalea"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(253, 218, 227),
 				["LeftArmColor3"] = Color3.fromRGB(253, 218, 227),
@@ -14783,7 +14783,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(185, 231, 241),
 		},
-		["Blueberry"] = {
+		["Z - Blueberry"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(204, 229, 255),
 				["LeftArmColor3"] = Color3.fromRGB(204, 229, 255),
@@ -14863,7 +14863,7 @@ function RoClothes(Player)
                 },
             },
 		},
-		["Sparkle Cat"] = {
+		["Z - Sparkle Cat"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -14928,7 +14928,7 @@ function RoClothes(Player)
 				},
             },
 		},
-		["silly"] = {
+		["Z - silly"] = {
 			["Clothing"] = {
 				"Roblox Shirt", 
 				"Roblox Pants", 
@@ -14987,7 +14987,7 @@ function RoClothes(Player)
 				    13547447399
 			}, 
 		},
-		["Scaredy Bee"] = {
+		["Z - Scaredy Bee"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -15040,7 +15040,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(50, 50 ,50),
 		},
-		["Lerp?!"] = {
+		["Z - Lerp?!"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -15097,7 +15097,7 @@ function RoClothes(Player)
 				Volume = 2.5,
 			},
 		},
-		["Bezzie"] = {
+		["Z - Bezzie"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(228, 191, 87),
 				["TorsoColor3"] = Color3.fromRGB(228, 191, 87),
@@ -15145,7 +15145,7 @@ function RoClothes(Player)
 			}, 
 			["NippleColor"] = Color3.fromRGB(70, 58, 44),
 		},
-		["Basil"] = {
+		["Z - Basil"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -15200,7 +15200,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(229, 207, 56),
 		},
-		["Rue"] = {
+		["Z - Rue"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(192, 6, 4),
 				["LeftArmColor3"] = Color3.fromRGB(192, 6, 4),
@@ -15254,7 +15254,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(46, 6, 0),
 		},
-		["Vyx"] = {
+		["Z - Vyx"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(27, 42, 53),
 				["LeftArmColor3"] = Color3.fromRGB(27, 42, 53),
@@ -15312,7 +15312,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(14, 20, 30),
 		},
-		["1x1x1x1"] = {
+		["Z - 1x1x1x1"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(30, 30, 30),
 				["LeftArmColor3"] = Color3.fromRGB(30, 30, 30),
@@ -15372,7 +15372,7 @@ function RoClothes(Player)
 			["ButtColor"] = Color3.fromRGB(30, 30, 30),
 			["NippleColor"] = Color3.fromRGB(30, 30, 30),
 		},
-		["white rabbit"] = {
+		["Z - white rabbit"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 204, 153),
 				["LeftArmColor3"] = Color3.fromRGB(255, 245, 230),
@@ -15433,7 +15433,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(128, 0, 32),
 		},
-		["Cryo Bunny"] = {
+		["Z - Cryo Bunny"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 244, 230),
 				["LeftArmColor3"] = Color3.fromRGB(255, 244, 230),
@@ -15490,7 +15490,7 @@ function RoClothes(Player)
 			["NippleColor"] = Color3.fromRGB(150, 255, 255), 
 			["TailAccessory"] = { 9424089991},
 		},
-		["ghosty"] = {
+		["Z - ghosty"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -15557,7 +15557,7 @@ function RoClothes(Player)
 			["NippleColor"] = Color3.fromRGB(10, 5, 5),
 			["TailAccessory"] = { 105426507566560 },
 		},
-		["PB"] = {
+		["Z - PB"] = {
 			["Body Color"] = {
 				["LeftLegColor3"] = Color3.fromRGB(248, 248, 248),
 				["LeftArmColor3"] = Color3.fromRGB(248, 248, 248),
@@ -15607,7 +15607,7 @@ function RoClothes(Player)
 		        Volume = nil,
 		    },
 		},
-		["CZ"] = {
+		["Z - CZ"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(235, 182, 136),
 				["LeftArmColor3"] = Color3.fromRGB(235, 182, 136),
@@ -15666,7 +15666,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(90, 60, 40), 
 		},
-		["Miritar"] = {
+		["Z - Miritar"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -15742,7 +15742,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(64, 64, 64),
 		},
-		["Virumnu"] = {
+		["Z - Virumnu"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(147, 165, 139),
 				["LeftArmColor3"] = Color3.fromRGB(147, 165, 139),
@@ -15793,7 +15793,7 @@ function RoClothes(Player)
 				Volume = 1.2,
 			},
 		},
-		["Smiler"] = {
+		["Z - Smiler"] = {
 			["Body Color"] = {
 				["LeftLegColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -15847,7 +15847,7 @@ function RoClothes(Player)
 			},
 			["NippleColor"] = Color3.fromRGB(128,128,128)
 		},
-		["Pur 03"] = {
+		["Z - Pur 03"] = {
 			["Body Color"] = {
 				["LeftLegColor3"] = Color3.fromRGB(196, 195, 195),
 				["LeftArmColor3"] = Color3.fromRGB(249, 249, 249),
@@ -15899,7 +15899,7 @@ function RoClothes(Player)
 				Volume = 40.5,
 			},
 		},
-		["Cate"] = {
+		["Z - Cate"] = {
 			["Body Color"] = {
 				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -15950,7 +15950,7 @@ function RoClothes(Player)
 				Volume = 40.5,
 			},
 		},
-		["Admiral Brickell"] = {
+		["Z - Admiral Brickell"] = {
 			["Accessory"] = {
 				17353312441, 
 				124882843038490, 
@@ -16001,7 +16001,7 @@ function RoClothes(Player)
 				["Pants"] = 12160847309, 
 			}, 
 		},
-		["Bassie"] = {
+		["Z - Bassie"] = {
 			["Accessory"] = {
 				125081022884422, 
 				75383822327576, 
@@ -16051,7 +16051,7 @@ function RoClothes(Player)
 				["Pants"] = 120072070272988, 
 			}, 
 		},
-		["Blaziken"] = {
+		["Z - Blaziken"] = {
 			["Accessory"] = {
 				16585735163, 
 				98231047158429, 
@@ -16100,7 +16100,7 @@ function RoClothes(Player)
 				["Pants"] = 100335578913451, 
 			}, 
 		},
-		["Gardevoir Shiny"] = {
+		["Z - Gardevoir Shiny"] = {
 			["Accessory"] = {
 				74407339441275, 
 				13780272238, 
@@ -16148,7 +16148,7 @@ function RoClothes(Player)
 				["Pants"] = 17364107537, 
 			}, 
 		},
-		["Girlfriend"] = {
+		["Z - Girlfriend"] = {
 			["Accessory"] = {
 				75315501855659, 
 				93713852135600, 
@@ -16202,7 +16202,7 @@ function RoClothes(Player)
 				["Pants"] = 106074327390659, 
 			}, 
 		},
-		["Holly"] = {
+		["Z - Holly"] = {
 			["Accessory"] = {
 				18336106697, 
 				84883935625759, 
@@ -16254,7 +16254,7 @@ function RoClothes(Player)
 				["Pants"] = 6511141817, 
 			}, 
 		},
-		["Hornet"] = {
+		["Z - Hornet"] = {
 			["Accessory"] = {
 				126088445740657, 
 				114911799979161, 
@@ -16297,7 +16297,7 @@ function RoClothes(Player)
 				["Pants"] = 17364107537, 
 			}, 
 		},
-		["Jane Doe"] = {
+		["Z - Jane Doe"] = {
 			["Body Color"] = {
 				["LeftLegColor3"] = Color3.fromRGB(248, 217, 109),
 				["LeftArmColor3"] = Color3.fromRGB(248, 217, 109),
@@ -16348,7 +16348,7 @@ function RoClothes(Player)
 				Volume = nil,
 			},
 		},
-		["Rosalina"] = {
+		["Z - Rosalina"] = {
 			["Accessory"] = {
 				5029069200, 
 				17772837098, 
@@ -16398,7 +16398,7 @@ function RoClothes(Player)
 				["Pants"] = 85553036613723, 
 			}, 
 		},
-		["Veeronica"] = {
+		["Z - Veeronica"] = {
 			["Accessory"] = {
 				97842374886527, 
 				18970779951, 
@@ -16452,7 +16452,7 @@ function RoClothes(Player)
 			["Clothes"] = {
 				["Shirt"] = 105474622067987, 
 				["Pants"] = 135886657887432, 
-			},
+			}, 
 		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
