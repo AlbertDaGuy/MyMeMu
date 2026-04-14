@@ -2,7 +2,7 @@
 
 	/ RO-CLOTHES - LERP FORK
 	A Fork of LERP's Ro-Clothes version 
-	Version - 0.9.8:krul(V4.3.46.0411)
+	Version - 0.9.18:krul(V4.3.56.0412)
 	This script is a fork of 0.7.9:lerp(1.01patch)
 	| THIS SCRIPT IS MAINTAINTED BY KRUL AND NOT LERP, ALL CREDIT GOES TO LERP, THIS VERSION IS MY OWN VERSION AND MAINTAINED BY ME ONLY
 	
@@ -90,6 +90,16 @@ local wagAnimationSwayAmplitude = 0.4
 local wagAnimationRollAmplitude = 0.5
 local wagAnimationBlendInAlpha = 0.008
 local wagAnimationBlendOutAlpha = 0.02
+
+-- V4.3.50 hotfix: moved out of RoClothes to avoid LuaU 200-local register cap per function.
+-- Modules A (physics warn throttle) + C (weld re-clone budget) pushed RoClothes over the limit,
+-- triggering "Out of local registers" at UIDragDetector allocation. Keeping these file-scope
+-- means TryRecloneWeld and the physics pcall handler capture them as upvalues instead of locals.
+local physicsWarnState = {}  -- [errKey] = lastWarnClock
+local PHYSICS_WARN_COOLDOWN = 5
+local reCloneBudget = setmetatable({}, {__mode = "k"})
+local RECLONE_WINDOW_SECONDS = 1
+local RECLONE_MAX_PER_WINDOW = 8
 
 function RoClothes(Player)
 	print("RoCC")
@@ -586,6 +596,9 @@ function RoClothes(Player)
 	GUIObject.UIGradient_4 = Instance.new("UIGradient")
 	GUIObject.UICorner_4 = Instance.new("UICorner")
 	GUIObject.PlayerExecute = Instance.new("TextBox")
+	GUIObject.PlayerDropdownToggle = Instance.new("TextButton")
+	GUIObject.PlayerDropdownFrame = Instance.new("ScrollingFrame")
+	GUIObject.PlayerDropdownLayout = Instance.new("UIListLayout")
 	GUIObject.BreastsTypeFrame = Instance.new("Frame")
 	GUIObject.UIGradient_5 = Instance.new("UIGradient")
 	GUIObject.UICorner_5 = Instance.new("UICorner")
@@ -962,7 +975,7 @@ function RoClothes(Player)
 		env.copy = missing("function", setclipboard)
 	end
 	-- variables --
-	local VersionInternal = "4.3.42.0411"
+	local VersionInternal = "4.3.42.0414"
 	local VersionDate = "2026-04-11"
 	local hidden = true
 
@@ -981,7 +994,7 @@ function RoClothes(Player)
 	local TS = game:GetService("TweenService")
 	local MPS = game:GetService("MarketplaceService")
 
-	local CVersion = "0.9.8:krul(V4.3.46.0411)"
+	local CVersion = "0.9.18:krul(V4.3.56.0412)"
 
 	-- these settings are saved and loaded --
 	local loadupBundle = ""
@@ -23067,6 +23080,30 @@ function RoClothes(Player)
 	end
 
 	local printed={}
+
+	-- V4.3.49: Weld re-clone rate limiter — prevents CPU lockup when a game destroys our welds every frame.
+	-- Budget is per-container, weakly referenced so GC can collect entries when the Part is destroyed.
+	-- V4.3.50: reCloneBudget / RECLONE_* moved to file scope (see top of file) for register-cap reasons.
+	function Function.TryRecloneWeld(container, weldChild)
+		if not container or not container.Parent or not weldChild then return false end
+		local state = reCloneBudget[container]
+		local now = os.clock()
+		if not state then
+			state = {count = 0, windowStart = now}
+			reCloneBudget[container] = state
+		end
+		if now - state.windowStart > RECLONE_WINDOW_SECONDS then
+			state.count = 0
+			state.windowStart = now
+		end
+		if state.count >= RECLONE_MAX_PER_WINDOW then
+			return false
+		end
+		state.count += 1
+		weldChild:Clone().Parent = container
+		return true
+	end
+
 	function Function.Weld(MeshDetail, Character, Extra, Data, RequestID)
 		if Character.Parent ~= nil then
 			setmetatable(MeshDetail, MetaClothes)
@@ -23171,7 +23208,7 @@ function RoClothes(Player)
 								detectRemoval = Part.ChildRemoved:Connect(function(c)
 									if Part.Parent ~= nil then
 										if c:IsA("Weld") and c.Part0 == v then
-											c:Clone().Parent = Part
+											Function.TryRecloneWeld(Part, c)
 										end
 									else
 										System.GlobalMaid:Remove(detectRemoval)
@@ -23346,7 +23383,7 @@ function RoClothes(Player)
 				detectRemoval = ObjectInstance.ChildRemoved:Connect(function(c)
 					if ObjectInstance.Parent ~= nil then
 						if c:IsA("Weld") and c.Part1 == ObjectInstance then
-							c:Clone().Parent = ObjectInstance
+							Function.TryRecloneWeld(ObjectInstance, c)
 						end
 					else
 						System.GlobalMaid:Remove(detectRemoval)
@@ -23619,7 +23656,7 @@ function RoClothes(Player)
 			detectRemoval = CHandle.ChildRemoved:Connect(function(c)
 				if CHandle.Parent ~= nil then
 					if c:IsA("Weld") and c.Part0 == CHandle then
-						c:Clone().Parent = CHandle
+						Function.TryRecloneWeld(CHandle, c)
 					end
 				else
 					detectRemoval:Disconnect()
@@ -24634,7 +24671,7 @@ function RoClothes(Player)
 							detectRemoval = Part.ChildRemoved:Connect(function(c)
 								if Part.Parent ~= nil then
 									if c:IsA("Weld") and c.Part0 == v then
-										c:Clone().Parent = Part
+										Function.TryRecloneWeld(Part, c)
 									end
 								else
 									GlobalMaid:Remove(detectRemoval)
@@ -27143,6 +27180,13 @@ function RoClothes(Player)
 		end
 	end)
 
+	-- V4.3.48: ensure FP raycast loop is stopped on session teardown (formerly relied on BREAKER.Destroying cascading errors to kill it).
+	GlobalMaid:Give(function()
+		if aWhile then
+			pcall(task.cancel, aWhile)
+		end
+	end)
+
 	local highlights = {}
 	local currentCamera = workspace.CurrentCamera
 	local currentFocus = currentCamera.Focus
@@ -27334,6 +27378,24 @@ function RoClothes(Player)
 									end
 								end)
 								table.insert(AllConnect,changed)
+								-- V4.3.51: reconcile highlights list on direct Destroy — Changed does not fire
+								-- reliably when a Highlight is Destroy()'d while still parented to the character,
+								-- so the list entry + replicate would leak monotonically across respawns.
+								local destroyingConn
+								destroyingConn = h.Destroying:Connect(function()
+									local idx = table.find(highlights,h)
+									if idx then
+										table.remove(highlights,idx)
+									end
+									if replicate then
+										replicate:Destroy()
+									end
+									if changed then
+										changed:Disconnect()
+									end
+									destroyingConn:Disconnect()
+								end)
+								table.insert(AllConnect,destroyingConn)
 							end
 						end
 					end
@@ -27856,6 +27918,8 @@ function RoClothes(Player)
 		GUIObject.ViewportCamera.CFrame = CFrame.lookAt(Vector3.new(math.sin(PreviewRotate)*PreviewRadius, 0, math.cos(PreviewRotate)*PreviewRadius), Vector3.new(0,0,0))
 	end)
 
+	-- V4.3.47: Physics error throttle — surface silent pcall failures at most once per 5s per unique error message.
+	-- V4.3.50: physicsWarnState / PHYSICS_WARN_COOLDOWN moved to file scope for register-cap reasons.
 	local PhysicsConnect = RS.RenderStepped:Connect(function(d)
 		for PlayerName, DataList in pairs(PlayerData) do
 			for Part, Property in pairs(DataList.CurrentPartList.BodyPartPhysics or {}) do
@@ -27964,8 +28028,14 @@ function RoClothes(Player)
 					Property.OriginCFrame = CurrentCFrame
 				end)
 
-				if not success and Debug then
-					warn("Ro-Clothes Physics Exception: " .. tostring(err))
+				if not success then
+					local errKey = tostring(err)
+					local now = os.clock()
+					local last = physicsWarnState[errKey]
+					if not last or (now - last) > PHYSICS_WARN_COOLDOWN then
+						physicsWarnState[errKey] = now
+						warn("Ro-Clothes Physics Exception: " .. errKey)
+					end
 				end
 			end
 		end
@@ -28599,22 +28669,116 @@ function RoClothes(Player)
 			end
 		end)
 
-		local PlayerChangeConnect = GUIObject.PlayerExecute:GetPropertyChangedSignal("Text"):Connect(function()
-			if PS:FindFirstChild(GUIObject.PlayerExecute.Text) then
-				SelectPlayer = GUIObject.PlayerExecute.Text
-				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
-
-				Function.PlayerDataAdd(SelectPlayer)
-				Function.GUIUpdate()
-			elseif not PS:FindFirstChild(GUIObject.PlayerExecute.Text) and GUIObject.PlayerExecute.Text ~= "Self" then
-				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,0,0)
-			elseif not PS:FindFirstChild(GUIObject.PlayerExecute.Text) and GUIObject.PlayerExecute.Text == "Self" then
+		-- V4.3.55: shared setter for SelectPlayer. Both the PlayerExecute TextBox
+		-- and the new PlayerDropdownFrame (dropdown buttons) call this so the
+		-- validation/PlayerDataAdd/GUIUpdate flow stays in one place.
+		local function setSelectPlayerByName(name)
+			if name == "Self" then
 				SelectPlayer = Player.Name
 				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
-
 				Function.GUIUpdate()
+				return true
+			elseif PS:FindFirstChild(name) then
+				SelectPlayer = name
+				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
+				Function.PlayerDataAdd(SelectPlayer)
+				Function.GUIUpdate()
+				return true
+			else
+				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,0,0)
+				return false
+			end
+		end
+
+		-- V4.3.55: rebuild the dropdown contents. Called on initial setup and on
+		-- PlayerAdded/PlayerRemoving so the list always reflects the live server state.
+		local function positionPlayerDropdown()
+			local abs = GUIObject.PlayerFrame.AbsolutePosition
+			local sz = GUIObject.PlayerFrame.AbsoluteSize
+			local inset = 0
+			if not GUIObject.Screen.IgnoreGuiInset then inset = 36 end
+			GUIObject.PlayerDropdownFrame.Position = UDim2.fromOffset(abs.X, abs.Y + sz.Y + 4 - inset)
+			GUIObject.PlayerDropdownFrame.Size = UDim2.fromOffset(sz.X, math.floor(sz.Y * 4.5))
+		end
+
+		local function rebuildPlayerDropdown()
+			for _, child in pairs(GUIObject.PlayerDropdownFrame:GetChildren()) do
+				if child:IsA("TextButton") then
+					child:Destroy()
+				end
+			end
+
+			local entries = {"Self"}
+			for _, plr in pairs(PS:GetPlayers()) do
+				table.insert(entries, plr.Name)
+			end
+			table.sort(entries, function(a, b)
+				if a == "Self" then return true end
+				if b == "Self" then return false end
+				return a:lower() < b:lower()
+			end)
+
+			for i, name in ipairs(entries) do
+				local btn = Instance.new("TextButton")
+				btn.Name = name
+				btn.Parent = GUIObject.PlayerDropdownFrame
+				btn.Size = UDim2.new(1, -4, 0, 24)
+				btn.BackgroundColor3 = Color3.fromRGB(28, 18, 48)
+				btn.BorderSizePixel = 0
+				btn.ZIndex = 101
+				btn.Font = Enum.Font.GothamMedium
+				btn.TextColor3 = Color3.fromRGB(230, 230, 240)
+				btn.TextScaled = true
+				btn.Text = name == "Self" and ("Self (" .. Player.Name .. ")") or name
+				btn.LayoutOrder = i
+				local corner = Instance.new("UICorner")
+				corner.CornerRadius = UDim.new(0.15, 0)
+				corner.Parent = btn
+				local pad = Instance.new("UIPadding")
+				pad.PaddingLeft = UDim.new(0, 4)
+				pad.PaddingRight = UDim.new(0, 4)
+				pad.Parent = btn
+
+				local capturedName = name
+				local conn = btn.MouseButton1Click:Connect(function()
+					if setSelectPlayerByName(capturedName) then
+						GUIObject.PlayerExecute.Text = capturedName
+						GUIObject.PlayerDropdownFrame.Visible = false
+					end
+				end)
+				table.insert(AllConnect, conn)
+			end
+		end
+
+		local PlayerChangeConnect = GUIObject.PlayerExecute:GetPropertyChangedSignal("Text"):Connect(function()
+			setSelectPlayerByName(GUIObject.PlayerExecute.Text)
+		end)
+
+		-- V4.3.55: dropdown toggle wiring + live server-roster listeners.
+		local PlayerDropdownToggleConnect = GUIObject.PlayerDropdownToggle.MouseButton1Click:Connect(function()
+			GUIObject.PlayerDropdownFrame.Visible = not GUIObject.PlayerDropdownFrame.Visible
+			if GUIObject.PlayerDropdownFrame.Visible then
+				positionPlayerDropdown()
+				rebuildPlayerDropdown()
 			end
 		end)
+		table.insert(AllConnect, PlayerDropdownToggleConnect)
+
+		local PlayerAddedDropdownConnect = PS.PlayerAdded:Connect(function()
+			if GUIObject.PlayerDropdownFrame.Visible then
+				rebuildPlayerDropdown()
+			end
+		end)
+		table.insert(AllConnect, PlayerAddedDropdownConnect)
+
+		local PlayerRemovingDropdownConnect = PS.PlayerRemoving:Connect(function()
+			if GUIObject.PlayerDropdownFrame.Visible then
+				rebuildPlayerDropdown()
+			end
+		end)
+		table.insert(AllConnect, PlayerRemovingDropdownConnect)
+
+		rebuildPlayerDropdown()
 
 		local AutoExecuteConnect = GUIObject.AutoExecuteButton.MouseButton1Click:Connect(function()
 			PlayerData[SelectPlayer].AutoExecute = not PlayerData[SelectPlayer].AutoExecute
@@ -29069,6 +29233,69 @@ function RoClothes(Player)
 			return s
 		end
 
+		-- V4.3.54: data-driven RecolorListFrame reconciler. Nuke-and-rebuild rows from
+		-- PlayerData[SelectPlayer].ClothesRecolor + Clothes[...].Weld + PartList[...].Recolor.
+		-- Replaces 6 imperative create sites and 4 destroy sites that were the root cause of
+		-- every "stale recolor row" bug (V4.3.51 body types, V4.3.52 ClothesRecolor, V4.3.53
+		-- GUI staleness). Call after any mutation to PlayerData[SelectPlayer].ClothesRecolor.
+		local function renderRecolorList()
+			for _, child in pairs(GUIObject.RecolorListFrame:GetChildren()) do
+				if child:IsA("Frame") then
+					child:Destroy()
+				end
+			end
+			for clothName, conns in pairs(System.RecolorButtons) do
+				for _, conn in pairs(conns) do
+					System.GlobalMaid:Remove(conn)
+				end
+				System.RecolorButtons[clothName] = nil
+			end
+
+			for clothName, slotState in pairs(PlayerData[SelectPlayer].ClothesRecolor) do
+				if Clothes[clothName] and Clothes[clothName].Weld then
+					System.RecolorButtons[clothName] = {}
+					local seenSlots = {}
+					for _, partName in pairs(Clothes[clothName].Weld) do
+						local partMeta = PartList[partName]
+						if partMeta and partMeta.Recolor and not seenSlots[partMeta.Recolor] then
+							seenSlots[partMeta.Recolor] = true
+							local slot = partMeta.Recolor
+							if slotState[slot] == nil then
+								slotState[slot] = "nil"
+							end
+
+							local button = Function.ButtonCreate(clothName, GUIObject.RecolorListFrame, true, {Color = partMeta.Color.Color, Text = clothName.." "..slot.."Color"})
+							local aspect = button:FindFirstChildOfClass("UIAspectRatioConstraint")
+							if aspect then aspect:Destroy() end
+							local tb = button:FindFirstChildOfClass("TextBox")
+
+							local currentValue = slotState[slot]
+							if typeof(currentValue) == "Color3" then
+								tb.TextColor3 = currentValue
+								tb.Text = math.round(currentValue.R * 255)..","..math.round(currentValue.G * 255)..","..math.round(currentValue.B * 255)
+							else
+								tb.TextColor3 = partMeta.Color.Color
+								tb.Text = ""
+							end
+
+							local conn = tb.FocusLost:Connect(function()
+								if tb.Text ~= "" then
+									local RGB = Function.StringTo(tb.Text, "RGB")
+									tb.TextColor3 = RGB
+									PlayerData[SelectPlayer].ClothesRecolor[clothName][slot] = RGB
+								else
+									PlayerData[SelectPlayer].ClothesRecolor[clothName][slot] = "nil"
+									tb.TextColor3 = partMeta.Color.Color
+								end
+							end)
+							table.insert(System.RecolorButtons[clothName], conn)
+							table.insert(AllConnect, conn)
+						end
+					end
+				end
+			end
+		end
+
 		local function checkBundle(v, RequestID)
 			if RequestID and RequestID ~= PlayerData[SelectPlayer].LastRequestID then return end
 
@@ -29239,92 +29466,24 @@ function RoClothes(Player)
 						end
 					end
 
-					for i, c in pairs(Clothes[v].Weld or {}) do
+					-- V4.3.54: just flag this cloth as needing a row set; renderRecolorList()
+					-- (called at end of checkBundle) builds the actual GUI rows from this state.
+					for _, c in pairs(Clothes[v].Weld or {}) do
 						if PartList[c] and PartList[c].Recolor then
 							if not PlayerData[SelectPlayer].ClothesRecolor[v] then
 								PlayerData[SelectPlayer].ClothesRecolor[v] = {}
-								System.RecolorButtons[v] = {}
 							end
-							if PartList[c].Recolor == "Primary" and not PlayerData[SelectPlayer].ClothesRecolor[v]["Primary"] then
-								PlayerData[SelectPlayer].ClothesRecolor[v]["Primary"] = "nil"
-								local button = Function.ButtonCreate(v, GUIObject.RecolorListFrame, true, {Color = PartList[c].Color.Color, Text = v.. " PrimaryColor"})
-								button:FindFirstChildOfClass("UIAspectRatioConstraint"):Destroy()
-
-								button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[c].Color.Color
-								button:FindFirstChildOfClass("TextBox").Text = ""
-								local primaryChangeConnect = button:FindFirstChildOfClass("TextBox").FocusLost:Connect(function()
-									if button:FindFirstChildOfClass("TextBox").Text ~= "" then
-										local RGB = Function.StringTo(button:FindFirstChildOfClass("TextBox").Text, "RGB")
-
-										button:FindFirstChildOfClass("TextBox").TextColor3 = RGB
-										PlayerData[SelectPlayer].ClothesRecolor[v]["Primary"] = RGB
-									else
-										PlayerData[SelectPlayer].ClothesRecolor[v]["Primary"] = "nil"
-										button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[c].Color.Color
-									end
-								end)
-								table.insert(System.RecolorButtons[v],primaryChangeConnect)
-								table.insert(AllConnect,primaryChangeConnect)
-							elseif PartList[c].Recolor == "Secondary" and not PlayerData[SelectPlayer].ClothesRecolor[v]["Secondary"] then
-								PlayerData[SelectPlayer].ClothesRecolor[v]["Secondary"] = "nil"
-								local button = Function.ButtonCreate(v, GUIObject.RecolorListFrame, true, {Color = PartList[c].Color.Color, Text = v.. " SecondaryColor"})
-								button:FindFirstChildOfClass("UIAspectRatioConstraint"):Destroy()
-
-								button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[c].Color.Color
-								button:FindFirstChildOfClass("TextBox").Text = ""
-								local secondaryChangeConnect = button:FindFirstChildOfClass("TextBox").FocusLost:Connect(function()
-									if button:FindFirstChildOfClass("TextBox").Text ~= "" then
-										local RGB = Function.StringTo(button:FindFirstChildOfClass("TextBox").Text, "RGB")
-
-										button:FindFirstChildOfClass("TextBox").TextColor3 = RGB
-										PlayerData[SelectPlayer].ClothesRecolor[v]["Secondary"] = RGB
-									else
-										PlayerData[SelectPlayer].ClothesRecolor[v]["Secondary"] = "nil"
-										button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[c].Color.Color
-									end
-								end)
-								table.insert(System.RecolorButtons[v],secondaryChangeConnect)
-								table.insert(AllConnect,secondaryChangeConnect)
-							elseif PartList[c].Recolor == "Tertiary" and not PlayerData[SelectPlayer].ClothesRecolor[v]["Tertiary"] then
-								PlayerData[SelectPlayer].ClothesRecolor[v]["Tertiary"] = "nil"
-								local button = Function.ButtonCreate(v, GUIObject.RecolorListFrame, true, {Color = PartList[c].Color.Color, Text = v.. " TertiaryColor"})
-								button:FindFirstChildOfClass("UIAspectRatioConstraint"):Destroy()
-
-								button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[c].Color.Color
-								button:FindFirstChildOfClass("TextBox").Text = ""
-								local tertiaryChangeConnect = button:FindFirstChildOfClass("TextBox").FocusLost:Connect(function()
-									if button:FindFirstChildOfClass("TextBox").Text ~= "" then
-										local RGB = Function.StringTo(button:FindFirstChildOfClass("TextBox").Text, "RGB")
-
-										button:FindFirstChildOfClass("TextBox").TextColor3 = RGB
-										PlayerData[SelectPlayer].ClothesRecolor[v]["Tertiary"] = RGB
-									else
-										PlayerData[SelectPlayer].ClothesRecolor[v]["Tertiary"] = "nil"
-										button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[c].Color.Color
-									end
-								end)
-								table.insert(System.RecolorButtons[v],tertiaryChangeConnect)
-								table.insert(AllConnect,tertiaryChangeConnect)
-							end
+							break
 						end
 					end
 				end
 			end
 
 			if v.Recolor then
-				for i, v in pairs(v.Recolor) do
-					PlayerData[SelectPlayer].ClothesRecolor[i] = v
-					for color, rgb in pairs(v) do
-						for z, button in pairs(GUIObject.RecolorListFrame:GetChildren()) do
-							if button.Name == i then
-								if button:FindFirstChildOfClass("TextBox").PlaceholderText == i.." "..color.."Color" then
-									local Split = string.split(tostring(rgb), ",")
-									button:FindFirstChildOfClass("TextBox").TextColor3 = rgb
-									button:FindFirstChildOfClass("TextBox").Text = math.round(Split[1]*255)..","..math.round(Split[2]*255)..","..math.round(Split[3]*255)
-								end
-							end
-						end
-					end
+				-- V4.3.54: bundle's per-cloth color overrides become state writes only;
+				-- renderRecolorList() at end of checkBundle reflects this into the GUI.
+				for cloth, colors in pairs(v.Recolor) do
+					PlayerData[SelectPlayer].ClothesRecolor[cloth] = colors
 				end
 			end
 
@@ -29349,6 +29508,7 @@ function RoClothes(Player)
 				end
 			end
 
+			renderRecolorList()
 		end
 
 		for i, v in pairs(Bundle) do
@@ -29430,6 +29590,15 @@ function RoClothes(Player)
 					PlayerData[SelectPlayer].LegsScale = 1
 					PlayerData[SelectPlayer].CockScale = 1
 					PlayerData[SelectPlayer].BodyPartPhysics = false
+					-- V4.3.51: reset body types and Tone too — fixes Datax→Sportsy bleed where a preset
+					-- bundle's TorsoType/ArmType/LegsType/ButtType/BreastsType/Tone persisted into a
+					-- presetless bundle because checkBundle had nothing to overwrite them with.
+					PlayerData[SelectPlayer].BreastsType = 1
+					PlayerData[SelectPlayer].TorsoType = 1
+					PlayerData[SelectPlayer].ArmType = 1
+					PlayerData[SelectPlayer].LegsType = 1
+					PlayerData[SelectPlayer].ButtType = 1
+					PlayerData[SelectPlayer].Tone = "Base"
 
 					PlayerData[SelectPlayer].LastRequestID = PlayerData[SelectPlayer].LastRequestID + 1
 					local CurrentRequestID = PlayerData[SelectPlayer].LastRequestID
@@ -29437,11 +29606,8 @@ function RoClothes(Player)
 					if BButton.Name == "nil" then
 						if PlayerData[SelectPlayer].CurrentBundle == "nil" then
 							PlayerData[SelectPlayer] = Function.PlayerDataDefault()
-							for i, v in pairs(GUIObject.RecolorListFrame:GetChildren()) do
-								if v:IsA("Frame") then
-									v:Destroy()
-								end
-							end
+							-- V4.3.54: renderRecolorList reconciles RecolorListFrame from the now-empty state.
+							renderRecolorList()
 
 							task.delay(0,function()
 								BButton:FindFirstChildOfClass("TextButton").Text = "CLEARED"
@@ -29454,6 +29620,12 @@ function RoClothes(Player)
 						PlayerData[SelectPlayer].CurrentPreset = nil
 						PlayerData[SelectPlayer].CurrentClothingBundles = {}
 						PlayerData[SelectPlayer].CurrentClothes = {}
+						-- V4.3.52: clear recolor state on regular-bundle switch so the previous bundle's
+						-- per-clothing colors don't bleed into the new bundle's clothing (e.g. Datax's green
+						-- Sock 2 was staying green on Sportsy because Sportsy has no Recolor block and
+						-- checkBundle only writes — never clears — ClothesRecolor entries).
+						-- ClothingBundle (add-on) intentionally skips this so layered recolors stay intact.
+						PlayerData[SelectPlayer].ClothesRecolor = {}
 					elseif isPreset then
 						PlayerData[SelectPlayer].CurrentPreset = BButton.Name
 						PlayerData[SelectPlayer].CurrentClothingBundles = {}
@@ -29561,73 +29733,14 @@ function RoClothes(Player)
 
 					if Clothes[CButton.Name].Weld then
 
-						for i, v in pairs(Clothes[CButton.Name].Weld) do
+						-- V4.3.54: just flag the cloth as needing a row set; renderRecolorList()
+						-- (called below before hotSwap) builds the actual GUI rows from this state.
+						for _, v in pairs(Clothes[CButton.Name].Weld) do
 							if PartList[v] and PartList[v].Recolor then
 								if not PlayerData[SelectPlayer].ClothesRecolor[CButton.Name] then
 									PlayerData[SelectPlayer].ClothesRecolor[CButton.Name] = {}
-									System.RecolorButtons[CButton.Name] = {}
 								end
-								if PartList[v].Recolor == "Primary" and not PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Primary"] then
-									PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Primary"] = "nil"
-									local button = Function.ButtonCreate(CButton.Name, GUIObject.RecolorListFrame, true, {Color = PartList[v].Color.Color, Text = CButton.Name.. " PrimaryColor"})
-									button:FindFirstChildOfClass("UIAspectRatioConstraint"):Destroy()
-
-									button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[v].Color.Color
-									button:FindFirstChildOfClass("TextBox").Text = ""
-									local primaryChangeConnect = button:FindFirstChildOfClass("TextBox").FocusLost:Connect(function()
-										if button:FindFirstChildOfClass("TextBox").Text ~= "" then
-											local RGB = Function.StringTo(button:FindFirstChildOfClass("TextBox").Text, "RGB")
-
-											button:FindFirstChildOfClass("TextBox").TextColor3 = RGB
-											PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Primary"] = RGB
-										else
-											PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Primary"] = "nil"
-											button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[v].Color.Color
-										end
-									end)
-									table.insert(System.RecolorButtons[CButton.Name],primaryChangeConnect)
-									table.insert(AllConnect,primaryChangeConnect)
-								elseif PartList[v].Recolor == "Secondary" and not PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Secondary"] then
-									PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Secondary"] = "nil"
-									local button = Function.ButtonCreate(CButton.Name, GUIObject.RecolorListFrame, true, {Color = PartList[v].Color.Color, Text = CButton.Name.. " SecondaryColor"})
-									button:FindFirstChildOfClass("UIAspectRatioConstraint"):Destroy()
-
-									button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[v].Color.Color
-									button:FindFirstChildOfClass("TextBox").Text = ""
-									local secondaryChangeConnect = button:FindFirstChildOfClass("TextBox").FocusLost:Connect(function()
-										if button:FindFirstChildOfClass("TextBox").Text ~= "" then
-											local RGB = Function.StringTo(button:FindFirstChildOfClass("TextBox").Text, "RGB")
-
-											button:FindFirstChildOfClass("TextBox").TextColor3 = RGB
-											PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Secondary"] = RGB
-										else
-											PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Secondary"] = "nil"
-											button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[v].Color.Color
-										end
-									end)
-									table.insert(System.RecolorButtons[CButton.Name],secondaryChangeConnect)
-									table.insert(AllConnect,secondaryChangeConnect)
-								elseif PartList[v].Recolor == "Tertiary" and not PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Tertiary"] then
-									PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Tertiary"] = "nil"
-									local button = Function.ButtonCreate(CButton.Name, GUIObject.RecolorListFrame, true, {Color = PartList[v].Color.Color, Text = CButton.Name.. " TertiaryColor"})
-									button:FindFirstChildOfClass("UIAspectRatioConstraint"):Destroy()
-
-									button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[v].Color.Color
-									button:FindFirstChildOfClass("TextBox").Text = ""
-									local tertiaryChangeConnect = button:FindFirstChildOfClass("TextBox").FocusLost:Connect(function()
-										if button:FindFirstChildOfClass("TextBox").Text ~= "" then
-											local RGB = Function.StringTo(button:FindFirstChildOfClass("TextBox").Text, "RGB")
-
-											button:FindFirstChildOfClass("TextBox").TextColor3 = RGB
-											PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Tertiary"] = RGB
-										else
-											PlayerData[SelectPlayer].ClothesRecolor[CButton.Name]["Tertiary"] = "nil"
-											button:FindFirstChildOfClass("TextBox").TextColor3 = PartList[v].Color.Color
-										end
-									end)
-									table.insert(System.RecolorButtons[CButton.Name],tertiaryChangeConnect)
-									table.insert(AllConnect,tertiaryChangeConnect)
-								end
+								break
 							end
 						end
 
@@ -29662,23 +29775,16 @@ function RoClothes(Player)
 						if v == CButton.Name then
 							table.remove(PlayerData[SelectPlayer].CurrentClothes, i)
 
+							-- V4.3.54: state clear only; renderRecolorList() handles GUI teardown.
 							if PlayerData[SelectPlayer].ClothesRecolor[CButton.Name] then
 								PlayerData[SelectPlayer].ClothesRecolor[CButton.Name] = nil
-								for i, v in pairs(GUIObject.RecolorListFrame:GetChildren()) do
-									if v.Name == CButton.Name then
-										v:Destroy()
-									end
-								end
-								for i, v in pairs(System.RecolorButtons[CButton.Name]) do
-									System.GlobalMaid:Remove(v)
-								end
-								System.RecolorButtons[CButton.Name] = nil
 							end
 
 						end
 					end
 				end
 
+				renderRecolorList()
 				hotSwap()
 				Function.GUIUpdate()
 			end)
@@ -30166,6 +30272,15 @@ function RoClothes(Player)
 										PlayerData[SelectPlayer].LegsScale = 1
 										PlayerData[SelectPlayer].CockScale = 1
 										PlayerData[SelectPlayer].BodyPartPhysics = false
+										-- V4.3.51: reset body types and Tone too — fixes Datax→Sportsy bleed where a preset
+										-- bundle's TorsoType/ArmType/LegsType/ButtType/BreastsType/Tone persisted into a
+										-- presetless bundle because checkBundle had nothing to overwrite them with.
+										PlayerData[SelectPlayer].BreastsType = 1
+										PlayerData[SelectPlayer].TorsoType = 1
+										PlayerData[SelectPlayer].ArmType = 1
+										PlayerData[SelectPlayer].LegsType = 1
+										PlayerData[SelectPlayer].ButtType = 1
+										PlayerData[SelectPlayer].Tone = "Base"
 
 										PlayerData[SelectPlayer].LastRequestID = PlayerData[SelectPlayer].LastRequestID + 1
 										local CurrentRequestID = PlayerData[SelectPlayer].LastRequestID
@@ -30175,6 +30290,8 @@ function RoClothes(Player)
 											PlayerData[SelectPlayer].CurrentPreset = nil
 											PlayerData[SelectPlayer].CurrentClothingBundles = {}
 											PlayerData[SelectPlayer].CurrentClothes = {}
+											-- V4.3.52: clear recolor state on regular-bundle switch — see regular-handler comment.
+											PlayerData[SelectPlayer].ClothesRecolor = {}
 										elseif isPreset then
 											PlayerData[SelectPlayer].CurrentPreset = BButton.Name
 											PlayerData[SelectPlayer].CurrentClothingBundles = {}
@@ -30587,6 +30704,41 @@ function RoClothes(Player)
 	GUIObject.PlayerExecute.TextSize = 14.000
 	GUIObject.PlayerExecute.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 	GUIObject.PlayerExecute.TextWrapped = true
+
+	GUIObject.PlayerDropdownToggle.Name = "PlayerDropdownToggle"
+	GUIObject.PlayerDropdownToggle.Parent = GUIObject.PlayerFrame
+	GUIObject.PlayerDropdownToggle.AnchorPoint = Vector2.new(1, 0.5)
+	GUIObject.PlayerDropdownToggle.BackgroundColor3 = Color3.fromRGB(48, 24, 80)
+	GUIObject.PlayerDropdownToggle.BackgroundTransparency = 0.300
+	GUIObject.PlayerDropdownToggle.BorderSizePixel = 0
+	GUIObject.PlayerDropdownToggle.Position = UDim2.new(1, -2, 0.5, 0)
+	GUIObject.PlayerDropdownToggle.Size = UDim2.new(0.18, 0, 0.85, 0)
+	GUIObject.PlayerDropdownToggle.ZIndex = 5
+	GUIObject.PlayerDropdownToggle.Font = Enum.Font.GothamBold
+	GUIObject.PlayerDropdownToggle.Text = "▼"
+	GUIObject.PlayerDropdownToggle.TextColor3 = Color3.fromRGB(230, 230, 240)
+	GUIObject.PlayerDropdownToggle.TextScaled = true
+	GUIObject.PlayerDropdownToggle.AutoButtonColor = true
+
+	GUIObject.PlayerDropdownFrame.Name = "PlayerDropdownFrame"
+	GUIObject.PlayerDropdownFrame.Parent = GUIObject.Screen
+	GUIObject.PlayerDropdownFrame.BackgroundColor3 = Color3.fromRGB(20, 12, 36)
+	GUIObject.PlayerDropdownFrame.BackgroundTransparency = 0.100
+	GUIObject.PlayerDropdownFrame.BorderSizePixel = 0
+	GUIObject.PlayerDropdownFrame.Position = UDim2.new(0, 0, 0, 0)
+	GUIObject.PlayerDropdownFrame.Size = UDim2.new(0, 100, 0, 100)
+	GUIObject.PlayerDropdownFrame.Visible = false
+	GUIObject.PlayerDropdownFrame.ZIndex = 100
+	GUIObject.PlayerDropdownFrame.ClipsDescendants = true
+	GUIObject.PlayerDropdownFrame.ScrollBarThickness = 4
+	GUIObject.PlayerDropdownFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+	GUIObject.PlayerDropdownFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+	GUIObject.PlayerDropdownLayout.Name = "PlayerDropdownLayout"
+	GUIObject.PlayerDropdownLayout.Parent = GUIObject.PlayerDropdownFrame
+	GUIObject.PlayerDropdownLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	GUIObject.PlayerDropdownLayout.Padding = UDim.new(0, 2)
+	GUIObject.PlayerDropdownLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 
 	GUIObject.BreastsTypeFrame.Name = "BreastsTypeFrame"
 	GUIObject.BreastsTypeFrame.Parent = GUIObject.Menu
