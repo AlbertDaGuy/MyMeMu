@@ -15794,17 +15794,17 @@ function RoClothes(Player)
 				Volume = nil,
 			},
 		},
-		["Koda [Squid Dog]"] = { 
+        ["Z - Koda [Squid Dog]"] = { 
 			["Clothes"] = { 
 				["Shirt"] = 102136454251890, 
 				["Pants"] = 75342699928877, 
-			}, 
+			},
 			["Clothing"] = { 
 				"Roblox Shirt", 
 				"Roblox Pants", 
 				"Roblox Butt Shirt",
 				"Roblox Breasts Clothing Type 3",
-			}, 
+			},
 			["Preset"] = { 
 				["PhysicsObeyGravity"] = true, 
 				["PositionPhysicsMultiply"] = 2.75, 
@@ -15822,7 +15822,7 @@ function RoClothes(Player)
 				["LegsScale"] = 1.075, 
 				["ButtType"] = 1, 
 				["Tone"] = "Use NippleColor", 
-			}, 
+			},
 			["Body Color"] = { 
 				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255), 
 				["TorsoColor3"] = Color3.fromRGB(255, 255, 255), 
@@ -15830,7 +15830,7 @@ function RoClothes(Player)
 				["RightArmColor3"] = Color3.fromRGB(255, 255, 255), 
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255), 
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255), 
-			}, 
+			},
 			["Accessory"] = { 
 				6838616052, 
 				140561863375293, 
@@ -15842,9 +15842,9 @@ function RoClothes(Player)
 				18601016700, 
 				11189999097, 
 				14116038196, 
-			}, 
+			},
 		},
-		["kai battle cats"] = {
+		["Z - kai battle cats"] = {
 			["Body Color"] = {
 		        ["LeftLegColor3"] = Color3.fromRGB(210, 178, 150),
 		        ["LeftArmColor3"] = Color3.fromRGB(210, 178, 150),
@@ -15895,7 +15895,7 @@ function RoClothes(Player)
 		        Volume = nil,
 		    },
 		},
-		["kasli the bane"] = {
+		["Z - kasli the bane"] = {
 		    ["Body Color"] = {
 		        ["LeftLegColor3"] = Color3.fromRGB(255, 245, 245),
 		        ["LeftArmColor3"] = Color3.fromRGB(255, 245, 245),
@@ -15947,7 +15947,7 @@ function RoClothes(Player)
 		        Volume = nil,
 		    },
 		},
-		["kasli the scourge"] = {
+		["Z - kasli the scourge"] = {
 		    ["Body Color"] = {
 		        ["LeftLegColor3"] = Color3.fromRGB(255, 245, 245),
 		        ["LeftArmColor3"] = Color3.fromRGB(255, 245, 245),
@@ -16000,7 +16000,7 @@ function RoClothes(Player)
 		        Volume = nil,
 		    },
 		},
-		["headmistress jeanne"] = {
+		["Z - headmistress jeanne"] = {
 		    ["Body Color"] = {
 		        ["LeftLegColor3"] = Color3.fromRGB(236, 200, 175),
 		        ["LeftArmColor3"] = Color3.fromRGB(236, 200, 175),
@@ -16051,6 +16051,42 @@ function RoClothes(Player)
 		        DamageSFX = nil,
 		        Volume = nil,
 		    },
+		},
+		["Z - lily"] = { 
+			["Clothes"] = { 
+				["Shirt"] = 76201856692113, 
+				["Pants"] = 126565214004642, 
+			}, 
+			["Clothing"] = { 
+				"Roblox Shirt", 
+				"Roblox Butt Shirt", 
+				"Roblox Pants", 
+				"Roblox Breasts Clothing", 
+			}, 
+			["Body Color"] = { 
+				["LeftLegColor3"] = Color3.fromRGB(99.00000169873238, 95.00000193715096, 98.00000175833702), 
+				["LeftArmColor3"] = Color3.fromRGB(99.00000169873238, 95.00000193715096, 98.00000175833702), 
+				["TorsoColor3"] = Color3.fromRGB(99.00000169873238, 95.00000193715096, 98.00000175833702), 
+				["RightLegColor3"] = Color3.fromRGB(99.00000169873238, 95.00000193715096, 98.00000175833702), 
+				["HeadColor3"] = Color3.fromRGB(99.00000169873238, 95.00000193715096, 98.00000175833702), 
+				["RightArmColor3"] = Color3.fromRGB(99.00000169873238, 95.00000193715096, 98.00000175833702), 
+			}, 
+			["Preset"] = { 
+				["ArmType"] = 2, 
+				["TorsoType"] = 2, 
+				["LegsType"] = 3, 
+				["ButtType"] = 3, 
+				["Tone"] = "Use NippleColor", 
+			}, 
+			["NippleColor"] = Color3.fromRGB(255, 255, 255), 
+			["Accessory"] = { 
+				72866689078698,
+				84051830152240,
+				133750708122026,
+				128367565439907,
+				89833384375518,
+				130953682500367, 
+			}, 
 		},
 		-- Clothing Bundles --
 		["Roblox Clothing"] = {
